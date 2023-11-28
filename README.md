@@ -1,7 +1,6 @@
 # Getting Started
   npm start
 # Home 
-![ShowCase](https://github.com/S-ciz/getHooked/assets/95995178/59a199e2-30bf-46f1-80a4-c7e5b44af811)
 ![HomePage](https://github.com/S-ciz/getHooked/assets/95995178/150ca5d3-0b4c-4022-a9ae-79c1340848f2) 
 
 
