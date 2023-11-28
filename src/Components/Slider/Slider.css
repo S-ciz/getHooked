@@ -1,0 +1,27 @@
+
+.slider 
+{  
+    display: grid;
+    /* border-radius: 1rem; */
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2rem;
+   
+}
+.slider h1.slider_header 
+{
+    padding-left: 1rem;
+    border-left: 5px solid var(--bright_red);
+    margin-bottom: 1rem;
+}
+.slider h5.title 
+{
+    display: grid;
+    color: var(--grey_tertiary);
+    font-weight: bold;
+    width: 50%;
+    text-align: center;
+    
+}

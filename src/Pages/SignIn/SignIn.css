@@ -1,0 +1,105 @@
+.sign_in {
+  position: relative;
+  width: 100%;
+  background-image: url("../../Resources/face_off.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.sign_in .form {
+  position: absolute;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  margin: auto;
+ 
+}
+
+.sign_in .form form h2 
+{
+    padding-bottom: 1rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.sign_in .form form {
+     
+     margin: auto;
+    margin-top: 2rem;
+    color: var(--white);
+    width: 500px;
+    height: 300px;
+  
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
+
+}
+
+.sign_in .form form input 
+{
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sign_in .form form label 
+{
+    display: block;
+    padding-bottom: 1rem;
+}
+
+.sign_in .form form .options 
+{
+    display: flex;
+    gap: 1rem;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+
+}
+
+.sign_in .form button.google_btn
+{
+   background: none;
+    border: none;
+    border: 1px solid var(--grey_secondary);
+    font-size: 1rem;
+    display: flex;
+    gap: 1rem;
+    font-weight: bold;
+     place-content: center;
+     place-items: center;
+     text-align: center;
+     width: 100%;
+    color: var(--white);
+    padding: 1rem;
+    
+}
+
+.sign_in .form .create 
+{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.sign_in .form .create a 
+{
+    font-weight: bold;
+    color: var(--white);
+}
+
+.sign_in .form button.google_btn img
+{
+   width:30px;
+   display: block;
+
+}

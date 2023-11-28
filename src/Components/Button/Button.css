@@ -1,0 +1,11 @@
+
+.global_btn 
+{
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 1rem;
+}

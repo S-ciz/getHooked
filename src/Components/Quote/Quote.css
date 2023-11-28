@@ -1,0 +1,42 @@
+.quote {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  background-image: url("../../Resources/fist.jpg");
+  background-size: cover;
+  background-attachment:scroll;
+  background-position: center;
+  height: 300px;
+}
+
+.quote .quote_content {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  line-height: 2;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--white);
+}
+
+.quote .quote_content h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.quote .quote_content button 
+{  
+    border: none;
+    padding: 1rem;
+    background: none;
+    color: var(--white);
+    border-radius: .5rem;
+    margin-top: 1rem;
+    border: 1px solid var(--grey_secondary);
+    cursor: pointer;
+}

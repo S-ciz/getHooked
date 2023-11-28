@@ -1,0 +1,79 @@
+.records {
+  position: relative;
+  width: 90%;
+  color: var(--white);
+  height: 500px;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.records .records_first {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  top: 0;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 1rem;
+}
+
+.records .records_first span
+{
+  font-size: 2rem;
+  font-weight: 50;
+ 
+}
+
+.records .records_sec {
+  position: absolute;
+  right: 0;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: grid;
+  place-items: center;
+  place-content: center;
+}
+
+.records .records_sec button 
+{
+    background: none;
+    border: none;
+    border: 1px solid var(--grey_secondary);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.agent_img {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  background-image: url("../../Resources/face_off.jpg");
+  background-position: center;
+  background-size: cover;
+  right: 50%;
+  bottom: 0;
+  top: 0;
+}
+
+.agent2_img {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  background-image: url("../../Resources/agent.jpg");
+  background-position: center;
+  background-size: cover;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}

@@ -1,0 +1,107 @@
+.signup {
+  width: 100%;
+  height: 100vh;
+}
+
+.signup .poster {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.signup .poster img {
+  position: absolute;
+  z-index: -3;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+}
+
+.signup .form_content {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+}
+
+/* copied styles */
+
+form h2 {
+  padding-bottom: 1rem;
+  text-align: center;
+  color: var(--grey_tertiary);
+}
+
+.form_content form {
+  margin: auto;
+  margin-top: 2rem;
+  color: var(--white);
+  width: 500px;
+  height: 300px;
+  border-radius: 1rem;
+}
+
+.form_content form input {
+  width: 100%;
+  border: none;
+  border: 1px solid var(--grey_secondary);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form_content form label {
+  display: block;
+  padding-bottom: 1rem;
+  color: black;
+}
+
+.form_content form .options {
+  display: flex;
+  gap: 1rem;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  color: black;
+}
+
+.form_content button.google_btn {
+  background: none;
+  border: none;
+  border: 1px solid var(--grey_secondary);
+  font-size: 1rem;
+  display: flex;
+  gap: 1rem;
+  font-weight: bold;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+  width: 100%;
+  color: black;
+  padding: 1rem;
+}
+
+.form_content .create {
+  display: flex;
+  color: black;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.form_content .create a {
+  font-weight: bold;
+  color: var(--grey_tertiary);
+}
+
+.form_content button.google_btn img {
+  width: 30px;
+  display: block;
+}

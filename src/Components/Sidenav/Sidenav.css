@@ -1,0 +1,50 @@
+.sidenav {
+  background-image: url("../../Resources/faces.jpg");
+  background-position: center;
+  background-size: cover;
+  color: var(--white);
+  padding: 1rem;
+  width: 280px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.sidenav::-webkit-scrollbar {
+  display: none;
+}
+
+.sidenav .image {
+    text-align: center;
+  border-bottom: 2px solid var(--grey_secondary);
+  padding-bottom: 1rem;
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+.sidenav .image p {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+}
+
+.sidenav .image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.sidenav ul {
+  padding-top: 2rem;
+}
+
+.sidenav ul li a {
+  display: flex;
+  color: var(--white);
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 2rem;
+}

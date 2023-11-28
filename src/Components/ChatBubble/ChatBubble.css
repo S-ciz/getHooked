@@ -1,0 +1,47 @@
+.chat_bubble_left {
+  position: relative;
+  float: left;
+  background-color: var(--white);
+  color: var(--grey_tertiary);
+  width: 300px;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  z-index: 3;
+}
+
+.chat_bubble_left .chat_speech {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--white);
+  left: 0.3rem;
+  bottom: -0.1rem;
+  z-index: -2;
+  transform: rotate(45deg);
+}
+
+.chat_bubble_right {
+  position: relative;
+  float: right;
+  background-color: var(--blue);
+  color: var(--grey_secondary);
+  width: 300px;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 4rem;
+  margin-right: 10%;
+  z-index: 3;
+}
+
+.chat_bubble_right .chat_speech {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--blue);
+  right: 0.3rem;
+  top: -0.1rem;
+  z-index: -2;
+  transform: rotate(45deg);
+}

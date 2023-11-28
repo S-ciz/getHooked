@@ -1,0 +1,63 @@
+
+main.welcome 
+{   
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 80%;
+    display: flex;
+    gap: 1rem;
+   
+}
+
+main.welcome .welcome_image 
+{
+    width: 50%;
+    display: grid;
+   align-items: center;
+    object-fit: cover;
+}
+main.welcome .welcome_image img 
+{
+    width: 100%;
+    object-fit: cover;
+}
+
+main.welcome .welcome_text 
+{
+    width: 50%;
+    padding: 1rem;
+    line-height: 1.5;
+}
+main.welcome .welcome_text h2 
+{
+    margin-bottom: 1rem;
+    font-weight: bolder;
+    font-size: 2rem;
+    padding-left: 1rem;
+    border-left: 5px solid var(--bright_red);
+}
+
+/* Media queries */
+@media (max-width:700px) {
+
+    main.welcome .welcome_image 
+    {
+      width: 100%;
+      padding: 0 2rem;
+    }
+    main.welcome 
+    {
+        display: grid;
+        width: 100%;
+    }
+
+    main.welcome .welcome_text  
+    {
+        width: 100%;
+        padding: 0 2rem;
+        margin-top: 2rem;
+    }
+}
+
+

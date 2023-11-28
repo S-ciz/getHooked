@@ -1,0 +1,79 @@
+header.navbar_header {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  padding: 1rem 3rem;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: var(--shadow);
+}
+
+.navbar_logo {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar_bars 
+{
+  display: none;
+}
+
+.navbar_logo img.fist_logo {
+  width: 50px;
+  object-fit: fill;
+}
+
+.navbar_ul ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar_ul ul li a {
+  color: var(--grey_tertiary);
+  font-weight: bold;
+}
+
+.navbar_ul ul button.list_btn {
+  padding: 1rem;
+  background-color: var(--blue);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar_ul ul button.list_btn a {
+  color: var(--white);
+}
+
+/* drop down */
+
+div.a_dropdown {
+  width: 400px;
+  height: 300px;
+  box-shadow: var(--shadow);
+  float: right;
+  margin-right: 10%;
+  background-color: red;
+  display: none;
+}
+
+/* Media queries */
+@media (max-width:700px)
+{
+ 
+
+  .navbar_ul
+  {
+    display: none;
+  }
+  .navbar_bars
+  {
+    display: grid;
+    cursor: pointer;
+  }
+
+}
