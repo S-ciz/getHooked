@@ -2,8 +2,10 @@ import "./Modal.css";
 
 function Modal() {
   return (
-    <div className="modal">
-      <h1>Modal</h1>
+    <div className="modal_wrapper">
+     <div className="modal"> 
+         <h1>Modal content </h1>
+     </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import "./NewsFeed.css";
 //icons
 import { FaHeart } from "react-icons/fa";
 import { FaComment } from "react-icons/fa";
+import { FaThumbsUp } from "react-icons/fa";
 
 //images
 import Visual from "../../Resources/cal.jpg";
@@ -18,6 +19,7 @@ const NewsFeed = () => {
               {" "}
               <img
                 alt="logo"
+                loading="lazy"
                 style={{ width: "30px", height: "30px", borderRadius: "100%" }}
                 src={Gym}
               />{" "}
@@ -43,18 +45,18 @@ const NewsFeed = () => {
           </p>
 
           <div className="feed_visual">
-            <img alt="feed_visual" src={Gym} />
+            <img loading="lazy" alt="feed_visual" src={Gym} />
           </div>
         </main>
 
         <aside className="feed_aside">
           <div>
-            {" "}
-            <FaHeart color="var(--bright_red)" size={18} /> 123{" "}
+            <FaThumbsUp color="var(--blue)" size={18} />
+            <p>123</p>
           </div>
           <div>
-            {" "}
-            <FaComment size={18} /> 23{" "}
+            <FaComment size={18} />
+            <p>123</p>
           </div>
         </aside>
       </div>
@@ -65,6 +67,7 @@ const NewsFeed = () => {
               {" "}
               <img
                 alt="logo"
+                loading="lazy"
                 style={{ width: "30px", height: "30px", borderRadius: "100%" }}
                 src={Visual}
               />{" "}
@@ -96,12 +99,12 @@ const NewsFeed = () => {
 
         <aside className="feed_aside">
           <div>
-            {" "}
-            <FaHeart color="var(--bright_red)" size={20} /> 123{" "}
+            <FaThumbsUp color="var(--blue)" size={20} />
+            <p>12</p>
           </div>
           <div>
-            {" "}
-            <FaComment size={20} /> 23{" "}
+            <FaComment size={20} />
+            <p>22</p>
           </div>
         </aside>
       </div>

@@ -1,0 +1,28 @@
+
+body 
+{
+    position: relative;
+    overflow-y: none;
+    overflow-x: none;
+    scroll-behavior: smooth;
+}
+.modal_wrapper 
+{  
+    position: absolute;
+  
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);  
+    z-index: 2;
+}
+
+.modal 
+{   
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 2rem;
+    z-index: 3;
+    color: white;
+}

@@ -12,7 +12,10 @@ import Home from "./Pages/Home/Home";
 import Home2 from "./Pages/Home2/Home2";
 import NewsFeed from "./BoxerComponent/NewsFeed/NewsFeed";
 import Chats from "./Components/Chats/Chats";
-import Chat from  "./Components/Chat/Chat"
+import Chat from "./Components/Chat/Chat";
+import Notification from "./Components/Notification/Notification";
+import Live from "./Components/Live/Live";
+import Search from "./Components/Search/Search";
 
 const Router = createBrowserRouter([
   {
@@ -38,7 +41,15 @@ const Router = createBrowserRouter([
     children: [
       {
         path: "/pages/home2/notification",
-        element: <h1> Notification </h1>,
+        element: <Notification />,
+      },
+      {
+        path: "/pages/home2/search/search_item",
+        element: <h1>search item </h1>
+      },
+      {
+            path: "/pages/home2/search",
+            element: <Search/>
       },
       {
         path: "/pages/home2/calendar",
@@ -46,23 +57,32 @@ const Router = createBrowserRouter([
       },
       {
         path: "/pages/home2/chats",
-        element: <Chats/>,
+        element: <Chats />,
       },
       {
-          path: "/pages/home2/chats/chat",
-          element: <Chat/>
+        path: "/pages/home2/chats/chat",
+        element: <Chat />,
       },
       {
         path: "/pages/home2/newsfeed",
-        element: <NewsFeed/>,
+        element: <NewsFeed />,
       },
       {
         path: "/pages/home2/live",
-        element: <h1> Live </h1>,
+        element: <Live />,
       },
     ],
   },
 ]);
+
+//Event for responsive navbar sizing
+let MEDIA_WIDTH = 900;
+window.addEventListener("resize", () => {
+  if (window.innerWidth > MEDIA_WIDTH) {
+    let navbarElement = document.querySelector("nav#main_side_nav");
+    navbarElement.style.display = "grid";
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

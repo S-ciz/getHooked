@@ -1,5 +1,6 @@
 import "./Chats.css";
 import { Link } from "react-router-dom";
+import Input from "../Input/Input";
 
 //images
 
@@ -11,9 +12,8 @@ function Chats() {
         <div>
           <h1>Chats</h1>
         </div>
-
-        <div>
-          <input className="chat_input" placeholder="Search..." />
+        <div >
+        <Input/>
         </div>
       </header>
 
@@ -21,7 +21,30 @@ function Chats() {
         <div className="chats_chat">
           <div className="chat_first">
             <main className="chat_profile">
-              <img alt="profile" src={DP} />
+              <img loading="lazy" alt="profile" src={DP} />
+            </main>
+
+            <main className="chat_content">
+              <h3>Paul Jackson</h3>
+              <p>This is the last message from me amigo...</p>
+            </main>
+          </div>
+
+          <div className="chat_additionals">
+            <aside>
+              <span className="alert_msg"> 3</span>
+            </aside>
+            <aside>
+              <p>2 days ago</p>
+            </aside>
+          </div>
+        </div>
+      </Link>
+      <Link to={"/pages/home2/chats/chat"}>
+        <div className="chats_chat">
+          <div className="chat_first">
+            <main className="chat_profile">
+              <img loading="lazy" alt="profile" src={DP} />
             </main>
 
             <main className="chat_content">
@@ -67,30 +90,7 @@ function Chats() {
         <div className="chats_chat">
           <div className="chat_first">
             <main className="chat_profile">
-              <img alt="profile" src={DP} />
-            </main>
-
-            <main className="chat_content">
-              <h3>Paul Jackson</h3>
-              <p>This is the last message from me amigo...</p>
-            </main>
-          </div>
-
-          <div className="chat_additionals">
-            <aside>
-              <span className="alert_msg"> 3</span>
-            </aside>
-            <aside>
-              <p>2 days ago</p>
-            </aside>
-          </div>
-        </div>
-      </Link>
-      <Link to={"/pages/home2/chats/chat"}>
-        <div className="chats_chat">
-          <div className="chat_first">
-            <main className="chat_profile">
-              <img alt="profile" src={DP} />
+              <img loading="lazy" alt="profile" src={DP} />
             </main>
 
             <main className="chat_content">

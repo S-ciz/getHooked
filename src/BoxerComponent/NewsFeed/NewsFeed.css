@@ -18,11 +18,25 @@
 }
 
 .newsfeed .news_card {
+  position: relative;
+  opacity: 0;
+  animation: newsfeed 1s ease-in-out;
+  animation-fill-mode: forwards;
   width: 80%;
   margin: auto;
   background-color: var(--white);
   margin-bottom: 1rem;
   margin-top: 2rem;
+}
+@keyframes newsfeed {
+  0%{
+      opacity: 0;
+  }
+
+  100%{
+     opacity: 1;
+  
+  }
 }
 
 .feed_logo {
@@ -60,12 +74,14 @@ main.feed_content p {
   gap: 2rem;
 }
 
-.feed_aside div {
+.feed_aside div{
   display: flex;
   cursor: pointer;
   gap: 0.5rem;
   align-items: center;
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
+
+}
+.feed_aside div p 
+{
+  font-size: 12px;
 }

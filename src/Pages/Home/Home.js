@@ -6,9 +6,6 @@ import Slider from "../../Components/Slider/Slider";
 import Welcome from "../../Components/Welcome/Welcome";
 import Quote from "../../Components/Quote/Quote";
 import Featuring from "../../Components/Featuring/Featuring";
-import Modal from "../../Components/Modal/Modal.js";
-
-
 
 //get images
 import MissionIMG from "../../Resources/mission.png";
@@ -43,19 +40,19 @@ const Home = () => {
     },
   ];
 
+  const maxNumberOfWords = 10
   const outputCards = introcards.map((card) => (
     <PrimaryCard
       color={"#318CE7"}
       key={card.id}
       heading={card.heading}
-      description={truncate(card.description, 20)}
+      description={truncate(card.description, maxNumberOfWords)}
       src={card.src}
     />
   ));
 
   return (
     <>  
-    <Modal/>
       <Navbar />
       <Showcase />
       <Slider/>

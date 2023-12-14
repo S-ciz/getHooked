@@ -1,17 +1,14 @@
+export function truncate(paragraph, maxNumberOfwords) {
+  let wordArray = paragraph.split(" ");
+  let finalparagraph = " ";
 
-export function truncate(text, maximum) {
-  //String tokenizer split
-  let textArray = text.split(" ");
-  let content = " ";
-
-  if (textArray.length <= maximum) {
-    content = text;
+  if (wordArray.length <= maxNumberOfwords) {
+    finalparagraph = paragraph;
   } else {
-    for (let i = 0; i < maximum; i++) {
-      content += textArray[i] + " ";
+    for (let i = 0; i < maxNumberOfwords; i++) {
+      finalparagraph += wordArray[i] + " ";
     }
-    content += "...";
+    finalparagraph += "...";
   }
-
-  return content;
+  return finalparagraph;
 }

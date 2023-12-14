@@ -26,7 +26,7 @@
   top: 40%;
   left: 40%;
   object-fit: cover;
-  z-index: 3;
+  z-index: 1;
   display: block;
   width: 2rem;
   cursor: pointer;
@@ -43,7 +43,7 @@
     .vid_card img.poster 
     {
         height: 100px;
-        width: 100px;
+        width: 100%;
         object-fit: fill;
     }
     .vid_card img.play 

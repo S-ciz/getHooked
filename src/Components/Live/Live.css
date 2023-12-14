@@ -1,0 +1,51 @@
+.live_wrapper 
+{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-y: scroll;
+}
+
+.live_wrapper::-webkit-scrollbar 
+{
+    display: none;
+}
+
+.live h1 
+{
+    color: var(--grey_primary);
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+video 
+{  
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.up_next 
+{
+    width: 100%;
+    margin: auto;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.up_next h1 
+{
+    border-left: 5px solid red;
+    padding-left: 1rem;
+}
+
+.up_next div 
+{
+    display: flex;
+    gap: 1rem;
+}

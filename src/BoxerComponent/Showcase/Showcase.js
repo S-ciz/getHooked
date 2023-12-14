@@ -1,6 +1,5 @@
 import "./Showcase.css"
 
-
 //images
 import Play from "../../Resources/play.png"
 const Showcase = () => {
