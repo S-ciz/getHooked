@@ -20,8 +20,8 @@ const SignUp = () => {
     <form>
           <h2>Create your account</h2>
 
-          <label> Username </label>
-          <input placeholder="Enter username" />
+          <label> Email </label>
+          <input placeholder="Enter email" />
           <label> Password </label>
           <input placeholder="Enter password" />
           <Button bgC={"var(--blue)"} text={"Create account"} />

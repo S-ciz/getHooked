@@ -6,6 +6,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
 }
 
 body::-webkit-scrollbar {
@@ -30,6 +31,7 @@ button {
   cursor: pointer;
 }
 input:focus,
+button:focus,
 textarea:focus {
   outline: none;
 }

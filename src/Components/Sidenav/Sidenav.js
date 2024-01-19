@@ -1,7 +1,11 @@
 import "./Sidenav.css";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { getUserCredentials } from "./Api";
+import { updateAgentOnlineStatus } from "../../Pages/SignIn/Api";
 
+//images
+import AlternativeImage from "../../Resources/user.png";
 //icons
 import {
   FaCalendar,
@@ -11,12 +15,10 @@ import {
   FaSignOutAlt,
   FaBell,
   FaSearch,
-  FaCog
+  FaCog,
 } from "react-icons/fa";
 
 //images
-import Profile from "../../Resources/shadowbox.jpg";
-
 const Sidenav = () => {
   let navbarRef = useRef();
   function toggleNavbar() {
@@ -27,21 +29,37 @@ const Sidenav = () => {
       navbarElement.style.display = "grid";
     }
   }
+  //get agent credential
+  const [agentName, setAgentName] = useState("")
+  const [agentSurname, setAgentSurname] = useState("")
+  const [profileImg, setProfileImg] = useState("")
+  useEffect(()=>{
+     getUserCredentials()
+     .then((data)=>{
+    setAgentName(data.name);
+    setAgentSurname(data.surname);
+    setProfileImg(data.profileImage);
+     })
+  }, [])
+
+  function signOut()
+  {
+     updateAgentOnlineStatus("offline")
+  }
+
   return (
     <nav ref={navbarRef} id="main_side_nav" className="sidenav">
       <div className="image">
-        <img alt="profile" src={Profile} />
+        <img loading="lazy" alt="profile" src={profileImg} />
         <span style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
           <h5>
-            {" "}
-            The Punisher
+            {agentName} {agentSurname}
             <br />
             (red boxer)
           </h5>
           <p style={{ background: "red" }}> </p>
         </span>
       </div>
-
       <ul>
         <li onClick={toggleNavbar}>
           <Link to={"/pages/home2/search"}>
@@ -53,7 +71,6 @@ const Sidenav = () => {
             <FaBell color="yellow" size={40} /> Notifications (12){" "}
           </Link>
         </li>
-
         <li onClick={toggleNavbar}>
           <Link to={"/pages/home2/calendar"}>
             <FaCalendar color="teal" size={40} /> Calendar{" "}
@@ -65,8 +82,8 @@ const Sidenav = () => {
           </Link>
         </li>
         <li onClick={toggleNavbar}>
-          <Link to={"/pages/home2/newsfeed"}>
-            <FaNewspaper color="purple" size={40} /> NewsFeed (2){" "}
+          <Link to={"/pages/home2/newsfeeds"}>
+            <FaNewspaper color="purple" size={40} /> NewsFeeds (2){" "}
           </Link>
         </li>
         <li onClick={toggleNavbar}>
@@ -80,7 +97,7 @@ const Sidenav = () => {
           </Link>
         </li>
         <li onClick={toggleNavbar}>
-          <Link to={"/pages/sign_in"}>
+          <Link onClick={signOut} to={"/pages/sign_in"}>
             <FaSignOutAlt color="grey" size={40} /> Sign out{" "}
           </Link>
         </li>

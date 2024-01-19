@@ -8,6 +8,26 @@
   overflow-y: scroll;
 }
 
+main.my_chats {
+  position: relative;
+  animation: mychats 2s ease-in-out;
+  animation-fill-mode: forwards;
+  transition: all 2s ease-in-out;
+  height: 0;
+  overflow: hidden;
+}
+
+@keyframes mychats {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100%;
+    overflow: none;
+  }
+}
+
 .chats_wrapper::-webkit-scrollbar {
   display: none;
 }
@@ -20,7 +40,6 @@
   align-items: center;
   padding: 0 2rem;
 }
-
 
 .chats_chat {
   position: relative;
@@ -36,22 +55,19 @@
   margin-right: 2rem;
   cursor: pointer;
   border-bottom: 1px solid var(--grey_secondary);
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.chats_chat:hover
-{
-  border-left: 5px solid var(--bright_red);
+.chats_chat:hover {
+  border-left: 0.5rem solid var(--blue);
 }
 @keyframes chat {
   0% {
     opacity: 0;
-    left: -50%;
   }
 
   100% {
     opacity: 1;
-    left: 0;
   }
 }
 

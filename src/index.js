@@ -10,12 +10,14 @@ import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
 import Home from "./Pages/Home/Home";
 import Home2 from "./Pages/Home2/Home2";
-import NewsFeed from "./BoxerComponent/NewsFeed/NewsFeed";
+import NewsFeeds from "./BoxerComponent/NewsFeeds/NewsFeeds";
 import Chats from "./Components/Chats/Chats";
 import Chat from "./Components/Chat/Chat";
 import Notification from "./Components/Notification/Notification";
 import Live from "./Components/Live/Live";
-import Search from "./Components/Search/Search";
+import Searches from "./Components/Search/Searches";
+import SearchItem from "./Components/SearchItem/SearchItem";
+import PostItem from "./Components/PostItem/PostItem";
 
 const Router = createBrowserRouter([
   {
@@ -45,11 +47,15 @@ const Router = createBrowserRouter([
       },
       {
         path: "/pages/home2/search/search_item",
-        element: <h1>search item </h1>
+        element: <SearchItem />,
       },
       {
-            path: "/pages/home2/search",
-            element: <Search/>
+        path: "/pages/home2/search",
+        element: <Searches/>,
+      },
+      {
+        path: "/pages/home2/post_item",
+        element: <PostItem />,
       },
       {
         path: "/pages/home2/calendar",
@@ -64,8 +70,8 @@ const Router = createBrowserRouter([
         element: <Chat />,
       },
       {
-        path: "/pages/home2/newsfeed",
-        element: <NewsFeed />,
+        path: "/pages/home2/newsfeeds",
+        element: <NewsFeeds />,
       },
       {
         path: "/pages/home2/live",
@@ -75,7 +81,9 @@ const Router = createBrowserRouter([
   },
 ]);
 
-//Event for responsive navbar sizing
+
+
+//Event for responsive navbar resizing
 let MEDIA_WIDTH = 900;
 window.addEventListener("resize", () => {
   if (window.innerWidth > MEDIA_WIDTH) {

@@ -6,9 +6,8 @@
   padding: 3rem 0;
 }
 
-.search_input 
-{
-    margin-bottom: 2rem;
+.search_input {
+  margin-bottom: 2rem;
 }
 .search_wrapper::-webkit-scrollbar {
   display: none;
@@ -30,27 +29,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-aside h4 
-{
-    color: var(--grey_tertiary);
+aside h4 {
+  color: var(--grey_tertiary);
 }
-aside p{
-    color: black;
+aside p {
+  color: black;
 }
-.search_content section:hover 
-{
-    background-color: #ADD8E6;
-    color: var(--grey_primary);
+.search_content section:hover {
+  background-color: #add8e6;
+  color: var(--grey_primary);
 }
 
 .search_content section .img {
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  background-color: var(--grey_primary);
+  background-color: var(--grey_secondary);
 }
 
 .search_content section .img img {
@@ -60,24 +57,20 @@ aside p{
   border-radius: 100%;
 }
 
-
-.search_content section aside.first_item 
-{
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+.search_content section aside.first_item {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
-.search_content section aside.first_item  p 
-{
-    padding-top: .2rem;
-    font-size: 13px;
+.search_content section aside.first_item p {
+  padding-top: 0.2rem;
+  font-size: 13px;
 }
 
-section aside button
-{
-    background-color: var(--blue);
-    padding: .5rem;
-    color: var(--grey_primary);
-    border: none;
+section aside button {
+  background-color: var(--blue);
+  padding: 0.5rem;
+  color: var(--grey_primary);
+  border: none;
 }

@@ -1,60 +1,85 @@
-.boxer_showcase
-{   
-    margin: auto;
-    margin-top: 5%;
-    margin-bottom: 2rem;
-    display: flex;
-    width: 80%;
-    box-shadow: var(--shadow);
-   
+.boxer_showcase {
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 2rem;
+  display: flex;
+  width: 80%;
+  box-shadow: var(--shadow);
+  background-color: var(--grey_primary);
 }
 
-.boxer_showcase .vid_showcase 
-{
-    background-color: var(--grey_tertiary);
-    height: 300px;
-    width: 50%;
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    filter: brightness(.75);
-    background-image: url('../../Resources/box.jpg');
-    background-size: cover;
-    background-position: center;
+.boxer_showcase .vid_showcase {
+  position: relative;
+  background-color: black;
+  height: 300px;
+  width: 40%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  filter: brightness(0.75);
+  background-size: cover;
+  background-position: center;
 }
 
-.boxer_showcase .vid_showcase img 
-{
-    cursor: pointer; 
-    width: 50px;
+.boxer_showcase .vid_showcase img.showcase_img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
-.boxer_showcase .content_showcase 
-{
+.boxer_showcase .content_showcase {
   padding: 2rem;
-  width: 50%;
+  width: 60%;
 }
 
-.boxer_showcase .content_showcase .sc_intro 
-{
-    font-size: 2rem;
-    color: var(--grey_tertiary);
-    border-left: 5px solid var(--bright_red);
-    padding-left: 1rem;
+.boxer_showcase .content_showcase .sc_intro {
+  font-size: 2rem;
+  color: var(--grey_tertiary);
+  border-left: 5px solid var(--blue);
+  padding-left: 1rem;
 }
-.boxer_showcase .content_showcase p 
-{
-    padding: 1rem 0;
-    line-height: 1.6;
-}
-.boxer_showcase .content_showcase ul 
-{
-    display: flex;
-    gap: 1rem;
+.boxer_showcase .content_showcase p {
+  padding: 1rem 0;
+  line-height: 1.6;
 }
 
-.boxer_showcase .content_showcase a 
-{
-    font-weight: bold;
-    color: var(--grey_tertiary)
+.boxer_showcase .content_showcase .buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.boxer_showcase .content_showcase button {
+  background-color: none;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid var(--grey_secondary);
+  padding: 0.5rem;
+  color: var(--grey_tertiary);
+}
+
+/* Media */
+
+@media (max-width: 1000px) {
+  .boxer_showcase {
+    display: grid;
+    width: 70%;
+  }
+  .boxer_showcase .vid_showcase {
+    width: 100%;
+  }
+  .boxer_showcase .content_showcase {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .boxer_showcase {
+    width: 90%;
+  }
 }

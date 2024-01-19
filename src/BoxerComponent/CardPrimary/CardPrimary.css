@@ -9,7 +9,7 @@
     background-position: center;
     width: 100%;
     height: 300px;
-    z-index: -1;
+    z-index: 1;
     margin-bottom: 5rem;
 }
 
@@ -39,6 +39,24 @@
 .cp_text 
 {
     padding-top: 3rem;
+    color: var(--grey_primary);
+}
+
+.btn_connect 
+{  
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    font-weight: bold;
+    margin-top: 3rem;
+    margin-left: 2rem;
+    background-color:rgba(0, 0, 0, 0.7);
+    border: none;
+    border: 1px solid var(--grey_primary);
+    color: var(--grey_primary);
+    border-radius: 1rem;
+    padding: .5rem;
+   
 }
 
 .cp_opacity 

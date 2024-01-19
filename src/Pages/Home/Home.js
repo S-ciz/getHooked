@@ -6,7 +6,6 @@ import Slider from "../../Components/Slider/Slider";
 import Welcome from "../../Components/Welcome/Welcome";
 import Quote from "../../Components/Quote/Quote";
 import Featuring from "../../Components/Featuring/Featuring";
-
 //get images
 import MissionIMG from "../../Resources/mission.png";
 import VissionIMG from "../../Resources/vision.png";
@@ -40,7 +39,7 @@ const Home = () => {
     },
   ];
 
-  const maxNumberOfWords = 10
+  const maxNumberOfWords = 10;
   const outputCards = introcards.map((card) => (
     <PrimaryCard
       color={"#318CE7"}
@@ -52,16 +51,15 @@ const Home = () => {
   ));
 
   return (
-    <>  
+    <>
       <Navbar />
       <Showcase />
-      <Slider/>
+      <Slider />
       <Welcome />
 
       <div className="intro_cards">{outputCards}</div>
       <Featuring />
       <Quote />
-      
     </>
   );
 };

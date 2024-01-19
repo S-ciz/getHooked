@@ -5,6 +5,28 @@
   background-position: center;
   background-size: cover;
   height: 100vh;
+  overflow-y: scroll;
+}
+.sign_in::-webkit-scrollbar {
+  display: none;
+}
+
+.alert_success {
+  display: grid;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgb(88, 236, 88);
+  color: var(--grey_primary);
+  margin-bottom: 1rem;
+}
+
+.alert_fail {
+  display: grid;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--bright_red);
+  color: var(--grey_primary);
+  margin-bottom: 1rem;
 }
 
 .sign_in .form {
@@ -93,10 +115,7 @@
 /* Media */
 
 @media (max-width: 550px) {
-    .sign_in .form form 
-    {
-        width: 100%;
-    }
+  .sign_in .form form {
+    width: 100%;
+  }
 }
-
-

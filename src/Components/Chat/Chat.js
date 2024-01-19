@@ -1,7 +1,16 @@
 import "./Chat.css";
-import ChatBubble from "../ChatBubble/ChatBubble";
+import Left from "../ChatBubble/Left";
+import Right from "../ChatBubble/Right";
+import {
+  getCurrentTime,
+  getMessageListForCurrentChat,
+  postMessage,
+} from "./Api";
+import { getAgent, updateAgentOnlineStatus } from "../../Pages/SignIn/Api";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-
+//emoji picker
+import EmojiPicker from "emoji-picker-react";
 //images
 import DP from "../../Resources/profile.jpg";
 //icons
@@ -11,63 +20,43 @@ import {
   FaArrowLeft,
   FaPaperPlane,
   FaSmile,
-  FaPaperclip,
+  FaImage,
 } from "react-icons/fa";
 
 const Chat = () => {
   //hard coded messges
-  const myChat_id = "993343";
-  const chatMessages = [
-    {
-      id: 0,
-      sender_id: "33423",
-      receiver_id: "993343",
-      message: "Hi stan, how do you do?",
-      time_stamp: "12:05",
-      read: false,
-      delivered: true,
-    },
-    {
-      id: 1,
-      sender_id: "993343",
-      receiver_id: "33423",
-      message: "Sup fam, I am good and yourself? it's been forever coach!",
-      time_stamp: "13:05",
-      read: false,
-    },
-    {
-      id: 2,
-      sender_id: "993343",
-      receiver_id: "33423",
-      message: "when does the gym open",
-      time_stamp: "14:05",
-      read: false,
-    },
-    {
-      id: 3,
-      sender_id: "33423",
-      receiver_id: "993343",
-      message: "It opens next year in jan, I hope you are well prepared",
-      time_stamp: "14:45",
-      read: false,
-    },
-    {
-      id: 4,
-      sender_id: "993343",
-      receiver_id: "33423",
-      message: "I will be!!!!",
-      time_stamp: "14:55",
-      read: false,
-    },
-  ];
-  
-  //this returns the chat_bubble class 
-  function formatMessage(messageSenderID) {
-    return messageSenderID === myChat_id
-      ? "chat_bubble chat_bubble_right"
-      : "chat_bubble chat_bubble_left";
-  }
-  
+  const myChat_id = window.sessionStorage.getItem("agent");
+  const currentChat_id = window.sessionStorage.getItem("currentChat");
+  const [mychat, setMyChat] = useState({});
+  const [chatMessages, setChatMessage] = useState([]);
+
+  useEffect(() => {
+    //set my chat data
+    getAgent(currentChat_id).then((data) => {
+      setMyChat(data);
+    });
+
+    //every 5 seconds
+    setInterval(() => {
+      getAgent(currentChat_id).then((data) => {
+        setMyChat(data);
+      });
+    }, 5000);
+
+    //initial call to load chats
+    getMessageListForCurrentChat().then((data) => {
+      setChatMessage(data);
+    });
+
+    //interval call
+    setInterval(() => {
+      getMessageListForCurrentChat().then((data) => {
+        setChatMessage(data);
+      });
+    }, 5000);
+  }, []);
+  let [inputValue, setInputValue] = useState("");
+
   function getCheck(IsMessageRead) {
     return IsMessageRead === true ? (
       <FaCheckDouble size={12} />
@@ -76,15 +65,105 @@ const Chat = () => {
     );
   }
 
-  const myMessages = chatMessages.map((mychat) => (
-    <ChatBubble
-      key={mychat.id}
-      time={mychat.time_stamp}
-      check_type={getCheck(mychat.delivered)}
-      bubble_class_name={formatMessage(mychat.sender_id)}
-      text={mychat.message}
-    />
-  ));
+  function getMessageType(objMsg) {
+    if (objMsg.from === myChat_id) {
+      return (
+        <Right
+          key={objMsg.id}
+          time={objMsg.time_stamp}
+          imageArr={objMsg.imgArr}
+          text={objMsg.message}
+          check_type={getCheck(objMsg.delivered)}
+        />
+      );
+    } else {
+      return (
+        <Left
+          key={objMsg.id}
+          time={objMsg.time_stamp}
+          imageArr={objMsg.imgArr}
+          text={objMsg.message}
+          check_type={getCheck(objMsg.delivered)}
+        />
+      );
+    }
+  }
+
+  const displayMessages = chatMessages.map((mychat) => getMessageType(mychat));
+  const imageRef = useRef();
+
+  function displayChatImage(file) {
+    const articleElement = imageRef.current;
+    const imageElement = document.createElement("img");
+    imageElement.src = URL.createObjectURL(file);
+    imageElement.className = "fileimage";
+    imageElement.alt = "chat_img";
+    articleElement.appendChild(imageElement);
+  }
+  function sendMessage(messageText, imgArr) {
+    setEmojiPicker(false);
+    let msgObj = {
+      id: chatMessages.length + 1,
+      from: myChat_id,
+      to: currentChat_id,
+      message: messageText,
+      time_stamp: getCurrentTime(),
+      read: false,
+      imgArr: imgArr,
+    };
+
+    if (
+      messageText.trim().length > 0 ||
+      imageRef.current.firstElementChild !== null
+    ) {
+      setChatMessage([...chatMessages, msgObj]);
+      postMessage(msgObj);
+    }
+  }
+
+  async function listenForFileSelection(e) {
+    setEmojiPicker(false);
+    console.log(e.target.files);
+    const files = e.target.files;
+    for (let i = 0; i < files.length; i++) {
+      displayChatImage(files[i]);
+    }
+  }
+
+  function toggleInput(e) {
+    setEmojiPicker(false);
+    setInputValue(e.target.value);
+    //I want to update status functionality to typing
+    updateAgentOnlineStatus("typing...");
+  }
+
+  function getImageArr() {
+    let imgArr = [];
+    const imageElement = imageRef.current;
+    let imgList = imageElement.querySelectorAll("img");
+    imgList.forEach((img) => {
+      imgArr.push(img.src);
+    });
+    return imgArr;
+  }
+
+  const [emojiPicker, setEmojiPicker] = useState(false);
+  const inputRef = useRef();
+
+  function toggleEmoji(emoji) {
+    const inputElement = inputRef.current;
+    setInputValue(inputElement.value + emoji.emoji);
+  }
+
+  function submitMessage() {
+    setEmojiPicker(false);
+    sendMessage(inputValue, getImageArr());
+    imageRef.current.innerHTML = "";
+    setInputValue("");
+    //update status functionality back to online
+    updateAgentOnlineStatus("online");
+  }
+
   return (
     <div className="single_chat">
       <header>
@@ -92,31 +171,68 @@ const Chat = () => {
           <FaArrowLeft size={20} />
         </Link>
         <div className="chat_img">
-          <img alt="chatimage" src={DP} />
+          <img className="chat_img" alt="chatimage" src={mychat.profileImage} />
         </div>
         <div className="chat_credential">
-          <h4>The Protector </h4>
-          <p> online </p>
+          <h4> {mychat.name + " " + mychat.surname} </h4>
+          <p> {mychat.status} </p>
         </div>
       </header>
-
-      <main className="chat_field">{myMessages}</main>
-
+      <main className="chat_field">
+        {chatMessages.length > 0 ? displayMessages : <Right />}
+      </main>
+      {emojiPicker ? (
+        <aside className="emojiPicker">
+          <EmojiPicker onEmojiClick={toggleEmoji} />
+        </aside>
+      ) : (
+        " "
+      )}
+      <article ref={imageRef}></article>
       <footer className="chat_message">
         <div className="chat_emoji">
-          <FaSmile size={20} color="yellow" />
-          <FaPaperclip size={20} color="brown" />
+          <span className="iconEmoji">
+            <FaSmile
+              onClick={() => setEmojiPicker(true)}
+              size={20}
+              color="yellow"
+            />
+          </span>
+          <span className="file">
+            <FaImage size={20} color="brown" />
+
+            <div className="file_input">
+              <form encType="multipart/form-data">
+                <input
+                  multiple={true}
+                  onChange={listenForFileSelection}
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                  required
+                />
+              </form>
+            </div>
+          </span>
         </div>
 
         <div className="chat_input">
-          <input placeholder="Enter text..." />
+          <input
+            ref={inputRef}
+            onInput={toggleInput}
+            value={inputValue}
+            placeholder="Enter text..."
+          />
         </div>
 
         <div className="chat_send">
           {/* <span> <FaPaperclip size={20} color="brown"/></span> */}
-          <span>
-            {" "}
-            <FaPaperPlane size={20} color="var(--white)" />{" "}
+          <span className="arrow">
+            <FaPaperPlane
+              onClick={submitMessage}
+              size={20}
+              color="var(--white)"
+            />{" "}
           </span>
         </div>
       </footer>

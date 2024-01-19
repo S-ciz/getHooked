@@ -1,30 +1,39 @@
-import "./Showcase.css"
+import "./Showcase.css";
 
-//images
-import Play from "../../Resources/play.png"
-const Showcase = () => {
+//icons
+import { FaUser, FaComment } from "react-icons/fa";
+
+//images for defaultProps
+import DP from "../../Resources/agent.jpg"
+
+//class
+const Showcase = ({agent}) => {
   return (
-    <div className='boxer_showcase'>
-      
-      <div className="vid_showcase"> 
-       
-      <img alt="play" src= {Play}/>
-
+    <div className="boxer_showcase">
+      <div  className="vid_showcase">
+        <img className="showcase_img" loading="lazy" alt="agent" src={agent.profileImage}/>
       </div>
-
-      <div className="content_showcase"> 
-        
-        <h4 className="sc_intro">Introduction</h4>
-        <p> This is some paragraph for the introduction to the  things that hve been taking place in the lives of the fellow boxers. A demo text that can be ignored for now, but later on replaced with some actual content</p>
-        <ul>
-            <li> <a href="#nix">#PersonalWebsite</a> </li>
-            <li> <a href="#nix">#Bio</a> </li>
-            <li> <a href="#nix">#Content_Creation</a> </li>
-        </ul>
-
+      <div className="content_showcase">
+        <h4 className="sc_intro">{agent.name}  <span className="active">{agent.surname} </span> </h4>
+        <p>
+        {agent.aboutUser}
+        </p>
+        <div className="buttons">
+        <button> <FaUser size={20}/> Connect</button>
+        <button><FaComment size={20}/> Message</button>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Showcase
+Showcase.defaultProps = 
+{
+  agent: {
+    name: "agentName",
+    surname: "agentSurname",
+    aboutUser: "about agent",
+    profileImage: DP
+  }
+}
+export default Showcase;

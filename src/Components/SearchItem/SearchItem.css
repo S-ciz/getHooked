@@ -1,0 +1,35 @@
+.search_item_wrapper {
+  width: 100%;
+  overflow-y: scroll;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.search_item_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.search_item_wrapper .posts 
+{    
+    width: 100%;
+    margin: auto;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.search_item_content header span
+{
+  width: 80%;
+  padding:1rem 2rem;
+  display: flex;
+  column-gap: .5rem;
+  align-items: center;
+  align-content: center;
+}
+.search_item_content header a 
+{
+  color: var(--grey_primary);
+}

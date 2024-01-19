@@ -17,19 +17,18 @@
   top: 0;
   display: grid;
   text-align: center;
+  row-gap: 3rem;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  justify-items: center;
-  justify-content: center;
+  align-content: center;
   line-height: 1.5;
   padding: 1rem;
+  z-index: 2;
 }
 
-.records .records_first span
-{
-  font-size: 2rem;
+.records .records_first span {
+  font-size: 1rem;
   font-weight: 50;
- 
 }
 
 .records .records_sec {
@@ -42,25 +41,25 @@
   display: grid;
   place-items: center;
   place-content: center;
+  z-index: 2;
 }
 
-.records .records_sec button 
-{
-    background: none;
-    border: none;
-    border: 1px solid var(--grey_secondary);
-    color: var(--white);
-    padding: 1rem;
-    border-radius: .5rem;
+.records .records_sec button {
+  background: none;
+  border: none;
+  border: 1px solid var(--grey_secondary);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 .agent_img {
   position: absolute;
-  z-index: -1;
-  left: 0;
+  z-index: 1;
   background-image: url("../../Resources/face_off.jpg");
   background-position: center;
   background-size: cover;
+  left: 0;
   right: 50%;
   bottom: 0;
   top: 0;
@@ -68,7 +67,7 @@
 
 .agent2_img {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   left: 50%;
   background-image: url("../../Resources/agent.jpg");
   background-position: center;
@@ -76,4 +75,33 @@
   right: 0;
   bottom: 0;
   top: 0;
+}
+
+
+/* Media */
+
+@media (max-width:1050px) {
+  .records .records_first 
+  {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width:900px) {
+  .records .records_first 
+  {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 3;
+  }
+  .records .records_sec 
+  { 
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
 }

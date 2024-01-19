@@ -1,0 +1,17 @@
+.newsfeeds_wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.newsfeeds_wrapper::-webkit-scrollbar
+{
+    display: none;
+}
+.newsfeeds 
+{
+    margin: auto;
+    width: 80%;
+}
+
+

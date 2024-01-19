@@ -7,11 +7,9 @@ import Sidenav from "../../Components/Sidenav/Sidenav";
 import { Outlet } from "react-router-dom";
 
 const Home2 = () => {
-
-  function toggleNavbar()
-  {
-    let navbarElement = document.querySelector("nav#main_side_nav")
-    navbarElement.style.display = "grid"
+  function toggleNavbar() {
+    let navbarElement = document.querySelector("nav#main_side_nav");
+    navbarElement.style.display = "grid";
   }
   return (
     <div className="home2">
@@ -20,7 +18,6 @@ const Home2 = () => {
       </div>
       <div className="outlet">
         <div className="outlet_menu">
-         
           <span className="toggle_bar">
             {" "}
             <FaBars onClick={toggleNavbar} size={30} />{" "}

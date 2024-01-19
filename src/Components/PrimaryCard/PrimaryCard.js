@@ -1,30 +1,35 @@
-import "./PrimaryCard.css"
-import MissionIMG from "../../Resources/mission.png"
+import "./PrimaryCard.css";
+import MissionIMG from "../../Resources/mission.png";
+import Modal from "../../Components/Modal/Modal"
+import { useState } from "react";
 
-const PrimaryCard = ({heading, description, src, color}) => {
+const PrimaryCard = ({ heading, description, src, color }) => {
+
   return (
-    <div className="primary_card">
-
+    <>
+      <div  className="primary_card">
         <section className="pc_image">
-            <img loading="lazy" alt="mission" src={src}/>
+          <img loading="lazy" alt="mission" src={src} />
         </section>
 
-        <section className="pc_content"> 
-           <h3>{heading}</h3>
-           <p>{description}</p>
-           <button style={{background:color}} className="pc_btn">Read More</button>
+        <section className="pc_content">
+          <h3>{heading}</h3>
+          <p>{description}</p>
+          <button style={{ background: color }} className="pc_btn">
+            Read More
+          </button>
         </section>
-      
-    </div>
-  )
-}
-
-PrimaryCard.defaultProps = 
-{
-    heading: "Heading",
-    src: MissionIMG,
-    color: "var(--bright_red)"
+       
+      </div>
     
-}
+    </>
+  );
+};
 
-export default PrimaryCard
+PrimaryCard.defaultProps = {
+  heading: "Heading",
+  src: MissionIMG,
+  color: "var(--bright_red)",
+};
+
+export default PrimaryCard;

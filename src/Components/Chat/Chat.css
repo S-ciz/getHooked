@@ -7,12 +7,19 @@
   color: var(--grey_secondary);
 }
 
-.single_chat .chat_img img {
+.single_chat div.chat_img {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 100%;
+}
+
+.single_chat .chat_img img.chat_img {
   width: 50px;
   height: 50px;
   object-fit: fill;
   border-radius: 100%;
-  background-color: var(--grey_primary);
+  background-color: var(--grey_secondary);
 }
 
 .single_chat header {
@@ -34,6 +41,7 @@
 }
 
 main.chat_field {
+  position: relative;
   height: 400px;
   padding: 2rem;
   width: 100%;
@@ -41,6 +49,41 @@ main.chat_field {
 }
 main.chat_field::-webkit-scrollbar {
   display: none;
+}
+
+article {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: scroll;
+  overflow-x: scroll;
+  display: flex;
+  margin-top: 0.5rem;
+  column-gap: 1rem;
+}
+article::-webkit-scrollbar {
+  display: none;
+}
+
+span.iconEmoji {
+  cursor: pointer;
+}
+
+aside.emojiPicker {
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin-top: 2rem;
+  padding: 1rem;
+  justify-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+article img {
+  width: 100px;
+  height: 100px;
+  object-fit: fill;
 }
 
 footer.chat_message {
@@ -54,7 +97,8 @@ footer.chat_message {
 }
 
 footer.chat_message input {
-   width: 100%;
+  width: 100%;
+  margin-top: -0.5rem;
   background: none;
   place-items: center;
   padding: 1rem;
@@ -66,15 +110,33 @@ footer.chat_message input {
 }
 
 .chat_emoji {
-  cursor: pointer;
   display: flex;
-  gap: 1rem;
+  column-gap: 1rem;
 }
 
 .chat_send {
   display: flex;
   gap: 0.5rem;
 }
-.chat_send span {
+
+.chat_send .arrow {
+  cursor: pointer;
+}
+
+span.file {
+  position: relative;
+}
+span.file div.file_input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow: hidden;
+  width: 10px;
+}
+
+span.file input {
+  border: none;
   cursor: pointer;
 }
