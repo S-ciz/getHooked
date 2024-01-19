@@ -14,26 +14,26 @@ sport they love.
 ![HomePage](https://github.com/S-ciz/getHooked/assets/95995178/150ca5d3-0b4c-4022-a9ae-79c1340848f2) 
 
 # NewsFeeds 
-![image](https://github.com/S-ciz/getHooked/assets/95995178/58076166-c1ea-4c7f-a23c-caceb09c9e81)
+![image](https://github.com/S-ciz/getHooked/assets/95995178/5a461069-f942-4aa3-bed9-823648e471e1)
 
 # Create Profile
-![createProfileBoxer](https://github.com/S-ciz/getHooked/assets/95995178/9d71b4ae-812f-427b-8536-824a9007e380)
+![image](https://github.com/S-ciz/getHooked/assets/95995178/3c28864a-dc24-4301-bc24-6f88be3ad49a)
 
-# Sign up
-![image](https://github.com/S-ciz/getHooked/assets/95995178/2166e065-4e49-4a42-88b2-c6da3dadcfc6)
+# Sign in
+![image](https://github.com/S-ciz/getHooked/assets/95995178/e831acc7-d999-4223-b67d-1d5d98bb7039)
 
 # Search for boxers and coaches
-![image](https://github.com/S-ciz/getHooked/assets/95995178/ad6e6d1c-a59e-4742-b329-e7eacc72259f)
+![image](https://github.com/S-ciz/getHooked/assets/95995178/32493769-45e8-4914-a903-08970a38c2f6)
 
 # Social Media platforms
-![image](https://github.com/S-ciz/getHooked/assets/95995178/aeeb2dff-978e-4ed4-8917-396b7e3f3a76)
+![image](https://github.com/S-ciz/getHooked/assets/95995178/8ca7a04e-7290-4e1f-87ae-28dd8b1de7c2)
 
 # Notifications 
-![image](https://github.com/S-ciz/getHooked/assets/95995178/d2056475-c14d-4abb-81f0-54ee9cf7f69e)
-
+![image](https://github.com/S-ciz/getHooked/assets/95995178/85ce2486-a158-4bc1-b7bb-943bd19edc83)
 
 # Live Boxing
-![image](https://github.com/S-ciz/getHooked/assets/95995178/b5bd1f8a-8e86-441e-b8a1-4e590edf93b1)
+![image](https://github.com/S-ciz/getHooked/assets/95995178/1d498d06-a45c-4e46-83e3-f81a27bcbead)
+
 
 
 
