@@ -1,6 +1,6 @@
 import "./Input.css"
 
-const Input = ({submitForm, toggleInput, placeholder={placeholder}}) => {
+const Input = ({submitForm, toggleInput, placeholder}) => {
   return (
     <form onSubmit={submitForm}>
     <input onInput={toggleInput} className="input" placeholder={placeholder} />

@@ -39,8 +39,7 @@ aside p {
   color: black;
 }
 .search_content section:hover {
-  background-color: #add8e6;
-  color: var(--grey_primary);
+  background-color: #efeaea;
 }
 
 .search_content section .img {

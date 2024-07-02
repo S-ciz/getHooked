@@ -1,0 +1,93 @@
+.Postform {
+  padding: 1rem;
+  border: 1px solid var(--grey_secondary);
+}
+.graphics {
+  display: flex;
+  column-gap: 0.5rem;
+  overflow-x: scroll;
+  width: 400px;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.graphics::-webkit-scrollbar {
+   display:grid;
+   height: .5rem;
+  
+}
+
+.graphics::-webkit-scrollbar-track 
+{
+  background: var(--grey_primary)
+}
+
+.graphics::-webkit-scrollbar-thumb 
+{
+  background: orangered;
+  border-radius: 1rem;
+}
+.graphics::-webkit-scrollbar-thumb:hover 
+{
+  cursor: pointer;
+}
+
+
+
+
+.graphics img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid var(--grey_secondary);
+  cursor: pointer;
+}
+.graphic_description {
+  width: 400px;
+  height: 200px;
+  resize: none;
+  margin-top: 1rem;
+  border: 1px solid var(--grey_secondary);
+  padding: 1rem; 
+  font-family: Arial, Helvetica, sans-serif;
+}
+.file_select {
+  position: relative;
+ margin-right: 1rem;
+ display: grid;
+ align-items: center;
+
+}
+
+.Postform input {
+  position: absolute;
+  opacity: 0;
+
+
+}
+.Postform input:hover {
+  cursor:pointer;
+}
+.Postform button {
+  display: grid;
+  width: 400px;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+}
+
+@media (max-width: 1200px) {
+  .graphics 
+  {
+    width: 300px;
+  }
+  .Postform button 
+  {
+    width: 100%;
+  }
+  .graphic_description
+  {
+    width: 100%;
+  }
+}

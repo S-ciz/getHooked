@@ -1,0 +1,43 @@
+.profileEditor {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.profileEditor::-webkit-scrollbar 
+{
+  width: 10px
+}
+.profileEditor::-webkit-scrollbar-thumb 
+{
+  background-color: var(--grey_secondary);
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.profileEditor::-webkit-scrollbar-track 
+{
+border-radius: 1rem;
+}
+.details_container {
+  width: 80%;
+  margin: auto;
+  padding-top: 1rem;
+}
+.abilityForm_container {
+  width: 80%;
+  margin: auto;
+  margin-top: 0.3rem;
+}
+.postCards_container 
+{
+  width: 80%;
+  margin: auto;
+}
+@media (max-width: 900px) {
+  
+  .abilityForm_container, .details_container, .postCards_container
+  {
+    width: 90%;
+  }
+}

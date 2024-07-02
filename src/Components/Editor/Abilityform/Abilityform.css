@@ -1,0 +1,133 @@
+.ability .ability_main {
+  padding: 1rem;
+  display: grid;
+  align-items: start;
+  align-content: start;
+  row-gap: 0.5rem;
+  column-gap: .5rem;
+  background-color: var(--white);
+  border: 1px solid var(--grey_secondary);
+  border-radius: 1rem 1rem 0 0;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  width: 100%;
+  height: 100px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.ability .ability_main::-webkit-scrollbar 
+{ 
+  width: 5px;
+  height: 5px;
+
+}
+.ability .ability_main::-webkit-scrollbar-thumb 
+{
+  background: var(--grey_tertiary);
+  border-radius: 1rem;
+}
+.ability .ability_main::-webkit-scrollbar-thumb:hover 
+{
+  cursor: pointer;
+}
+.ability .ability_main::-webkit-scrollbar-track 
+{
+  border-radius: 1rem;
+  background-color: var(--white);
+}
+.ability_title 
+{
+  padding-left: .5rem;
+  border-left: 2px solid var(--blue);
+  margin-left: 1rem;
+  margin-bottom: .5rem;
+  color: var(--grey_tertiary);
+}
+.ability_main .item {
+  display: flex;
+  align-items: center;
+  column-gap: .2rem;
+}
+.ability_main .item span {
+  background-color: var(--white);
+  border: 1px solid var(--grey_secondary);
+  color: grey;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.ability_main .item aside {
+  cursor: pointer;
+  font-size: .7rem;
+  transition: all .5s ease-in-out;
+  position: inherit;
+}
+.ability_main .item aside:hover 
+{
+   transform: scale(1.5);
+  
+ 
+}
+.ability_footer {
+  width: 100%;
+  background-color: white;
+  border: 1px solid var(--grey_secondary);
+  display: grid;
+  align-items: center;
+  column-gap: 1rem;
+  padding: 0.5rem 0;
+  border-radius: 0  0 1rem 1rem;
+  grid-template-columns: 4fr 1fr;
+}
+
+.ability_footer input {
+  width: 100%;
+  border: 1px solid var(--grey_secondary);
+  padding-left: 1rem;
+  display: grid;
+  height: 2rem;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+}
+
+.ability_footer .add_item {
+  background-color: var(--blue);
+  width: 40px;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/*  Form */
+.abilityform {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  justify-content: start;
+  justify-items: start;
+  gap: 1rem;
+
+  padding: 2rem 1rem;
+}
+
+
+@media (max-width: 1500px) {
+  .abilityform 
+  {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+  .ability .ability_main
+  {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+  }
+}
+/* .abilityform span {
+  width: 80%;
+} */

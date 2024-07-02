@@ -1,10 +1,12 @@
 import "./ChatBubble.css";
+
+import { Link } from "react-router-dom";
 //icons
 import { FaCheckDouble } from "react-icons/fa";
 
 const Left = ({ time, check_type, text, imageArr }) => {
-  const diplayImageArr = imageArr.map((image) => (
-    <img alt="source" src={image} />
+  const diplayImages = imageArr.map((image) => (
+    <Link to="/pages/home2/chats/chat/graphics"> <img alt="source" src={image} /> </Link>
   ));
   
   return (
@@ -12,7 +14,7 @@ const Left = ({ time, check_type, text, imageArr }) => {
       <section className="chat_bubble_left">
         <section className="msg_content">
           <div className="attachments">
-            {imageArr.length > 0 ? diplayImageArr : " "}
+            {imageArr.length > 0 ? diplayImages : " "}
           </div>
           <div>
             <p>{text}</p>

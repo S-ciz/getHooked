@@ -1,25 +1,40 @@
 import "./Chats.css";
 import { Link } from "react-router-dom";
-import { getConnections } from "./Api";
+import { getConnections, unreadMsg } from "./Api";
 import Input from "../Input/Input";
 import { useEffect, useState, useRef } from "react";
+import { updateAgentAttributes } from "../../Pages/SignIn/Api";
 
 //Chats
 function Chats() {
   const [myChats, setChats] = useState([]);
+  const [msgNotRead, setMsgNotRead] = useState([]);
 
   useEffect(() => {
     getConnections().then((data) => {
       setChats(data);
     });
+
+    unreadMsg().then((data) => {
+      setMsgNotRead(data);
+    });
   }, []);
 
   let displayChats = null;
   try {
-    displayChats = myChats.map((item) => (
+    displayChats = myChats.map((item, index) => (
       <Link
         onClick={() => {
           window.sessionStorage.setItem("currentChat", item.email);
+          // mark all msg as read
+          let unread = msgNotRead[index].msgList;
+          for (let msg of unread) {
+            let chatId = msg.id;
+            updateAgentAttributes(item.email, {
+              type: "MessagesRead",
+              content: chatId,
+            });
+          }
         }}
         id={item.email}
         key={item.email}
@@ -34,16 +49,27 @@ function Chats() {
               <h3>
                 {item.name} {item.surname}
               </h3>
-              <p>This is the last message from me amigo...</p>
+              <p>
+                {msgNotRead[index].msgList.length > 0
+                  ? msgNotRead[index].msgList[0].message
+                  : ""}{" "}
+              </p>
             </main>
           </div>
-
           <div className="chat_additionals">
+            {msgNotRead[index].msgList.length > 0 ? (
+              <aside>
+                <span className="alert_msg">
+                  {" "}
+                  {msgNotRead[index].msgList.length}{" "}
+                </span>
+              </aside>
+            ) : (
+              ""
+            )}
+
             <aside>
-              <span className="alert_msg"> 3</span>
-            </aside>
-            <aside>
-              <p>2 days ago</p>
+              <p>{item.status}</p>
             </aside>
           </div>
         </div>
@@ -57,7 +83,6 @@ function Chats() {
 
   function toggleChats(e) {
     let chatsElement = chatsRef.current;
-
     if (myChats.length > 0) {
       let InputTxt = e.target.value.toUpperCase();
       let chatsList = chatsElement.children;
@@ -65,7 +90,7 @@ function Chats() {
         const userName = chatsList[i]
           .querySelector("h3")
           .textContent.toUpperCase();
-          
+
         if (userName.indexOf(InputTxt) !== -1) {
           chatsList[i].style.display = "grid";
         } else {
@@ -87,7 +112,7 @@ function Chats() {
       </header>
 
       <main ref={chatsRef} className="my_chats">
-        {myChats.length > 0 ? displayChats : ""}
+        {myChats ? displayChats : " "}
       </main>
     </div>
   );

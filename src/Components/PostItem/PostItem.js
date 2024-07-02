@@ -4,9 +4,7 @@ import "./PostItem.css";
 //images
 import NewsFeed from "../../BoxerComponent/NewsFeed/NewsFeed";
 import Dropdown from "../Dropdown/Dropdown";
-import Search from "../Search/Search";
 import Card from "./Card";
-import { useState } from "react";
 import Input from "../Input/Input";
 
 const PostItem = () => {
@@ -44,7 +42,8 @@ const PostItem = () => {
           <Link to={"/pages/home2/search/search_item"}>
            <span> <FaArrowLeft color="var(--grey_primary)" fontSize={20} /> Profile </span> 
           </Link>
-        </header>
+        </header> 
+        <main className="post_main">
         <div className="comment_input">
           <Input placeholder="Write your comment..." />
         </div>
@@ -55,6 +54,8 @@ const PostItem = () => {
         {getComments() !== null ? getComments() : " "}
         <br />
         <br />
+
+        </main>
       </section>
     </div>
   );

@@ -1,0 +1,136 @@
+.details_editor {
+  background-color: white;
+  width: 100%;
+  margin: auto;
+}
+
+.details_editor main.de_main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  padding: 1rem;
+}
+
+section.de_inputs {
+  padding: 1rem;
+}
+section.de_inputs h2 {
+  color: var(--grey_tertiary);
+  margin-bottom: 1rem;
+  border-left: 2px solid var(--blue);
+  padding-left: 0.5rem;
+  width: 100%;
+  display: flex;
+  column-gap: 2rem;
+}
+
+section.de_inputs h2 > span {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+section.de_inputs h2 > span:hover {
+  transform: scale(0.9);
+}
+section.de_inputs label {
+  display: block;
+  font-size: 12px;
+  padding-top: 0.5rem;
+  color: var(--grey_tertiary);
+  padding-bottom: 0.5rem;
+}
+section.de_inputs textarea {
+  resize: none;
+  width: 100%;
+  display: grid;
+  height: 2.5rem;
+  padding: 0.5rem;
+  color: black;
+  border: 1px solid var(--grey_secondary);
+  overflow: hidden;
+}
+
+/* section.de_image {
+  padding-top: 2rem;
+} */
+section.de_image img {
+  width: 200px;
+  margin: auto;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.6s ease-in;
+}
+section.de_image img:hover {
+  opacity: 0.5;
+}
+
+section.de_image {
+  position: relative;
+  margin: auto;
+}
+.edit_img {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  background: var(--white);
+  opacity: 0;
+  height: 0;
+  display: grid;
+  overflow: hidden;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  animation-name: edit_img;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes edit_img {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 70px;
+  }
+}
+
+.edit_img span {
+  display: flex;
+  column-gap: 0.5rem;
+  padding-bottom: 0.8rem;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.edit_img span p {
+  font-size: 0.8rem;
+  color: var(--grey_tertiary);
+}
+.edit_img span:hover {
+  transform: scale(0.9);
+}
+
+.details_editor footer {
+  width: 60%;
+
+  margin: auto;
+  padding: 1rem;
+}
+.details_editor footer > button {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border: 1px solid var(--grey_secondary);
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+@media (max-width: 700px) {
+  .details_editor main.de_main
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

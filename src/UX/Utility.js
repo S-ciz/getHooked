@@ -12,3 +12,15 @@ export function truncate(paragraph, maxNumberOfwords) {
   }
   return finalparagraph;
 }
+
+export function trim(txt) {
+  let newArr = txt.split("");
+  let newList = [];
+  for (let char of newArr) {
+    if (char !== " ") {
+      newList.push(char);
+    }
+  }
+
+  return newList.join("");
+}

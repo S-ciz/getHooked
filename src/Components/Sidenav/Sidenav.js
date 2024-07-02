@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { getUserCredentials } from "./Api";
 import { updateAgentOnlineStatus } from "../../Pages/SignIn/Api";
 
-//images
-import AlternativeImage from "../../Resources/user.png";
 //icons
 import {
   FaCalendar,
@@ -50,7 +48,7 @@ const Sidenav = () => {
   return (
     <nav ref={navbarRef} id="main_side_nav" className="sidenav">
       <div className="image">
-        <img loading="lazy" alt="profile" src={profileImg} />
+     <img loading="lazy" alt="profile" src={profileImg} />
         <span style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
           <h5>
             {agentName} {agentSurname}
@@ -92,7 +90,7 @@ const Sidenav = () => {
           </Link>
         </li>
         <li onClick={toggleNavbar}>
-          <Link to={"/pages/sign_in"}>
+          <Link to={"/pages/home2/profile"}>
             <FaCog color="var(--grey_secondary)" size={40} /> Settings{" "}
           </Link>
         </li>

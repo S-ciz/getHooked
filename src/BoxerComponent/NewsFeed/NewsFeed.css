@@ -62,9 +62,12 @@ main.feed_content p {
 
 .feed_aside div {
   display: flex;
-  cursor: pointer;
   gap: 0.5rem;
   align-items: center;
+}
+.feed_aside span 
+{
+  cursor: pointer;
 }
 .feed_aside div p {
   font-size: 12px;

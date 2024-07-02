@@ -3,7 +3,7 @@ import { truncate } from "../../UX/Utility";
 import "./Featuring.css";
 
 //images
-import Agent from "../../Resources/profile.jpg";
+import Agent from "../../Resources/profile_lg.jpg";
 import punchBag from "../../Resources/gym.jpg";
 import filter from "../../Resources/filter.jpg";
 import dumbells from "../../Resources/dum.jpg";

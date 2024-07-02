@@ -18,11 +18,13 @@ import Live from "./Components/Live/Live";
 import Searches from "./Components/Search/Searches";
 import SearchItem from "./Components/SearchItem/SearchItem";
 import PostItem from "./Components/PostItem/PostItem";
+import ChatGraphics from "./Components/ChatGraphics/ChatGraphics"
+import ProfileEditor from "./Components/Editor/ProfileEditor/ProfileEditor";
 
 const Router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
     errorElement: <h1> Please create component</h1>,
   },
   {
@@ -44,6 +46,10 @@ const Router = createBrowserRouter([
       {
         path: "/pages/home2/notification",
         element: <Notification />,
+      },
+      {
+         path: "/pages/home2/profile",
+         element: <ProfileEditor/>
       },
       {
         path: "/pages/home2/search/search_item",
@@ -70,6 +76,10 @@ const Router = createBrowserRouter([
         element: <Chat />,
       },
       {
+        path: "/pages/home2/chats/chat/graphics", 
+        element: <ChatGraphics/>
+      },
+      {
         path: "/pages/home2/newsfeeds",
         element: <NewsFeeds />,
       },
@@ -80,7 +90,6 @@ const Router = createBrowserRouter([
     ],
   },
 ]);
-
 
 
 //Event for responsive navbar resizing

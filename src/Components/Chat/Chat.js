@@ -6,13 +6,17 @@ import {
   getMessageListForCurrentChat,
   postMessage,
 } from "./Api";
-import { getAgent, updateAgentOnlineStatus } from "../../Pages/SignIn/Api";
+import {
+  getAgent,
+  updateAgentOnlineStatus,
+  updateAgentAttributes,
+} from "../../Pages/SignIn/Api";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 //emoji picker
 import EmojiPicker from "emoji-picker-react";
 //images
-import DP from "../../Resources/profile.jpg";
+// import DP from "../../Resources/profile.jpg";
 //icons
 import {
   FaCheck,
@@ -23,12 +27,24 @@ import {
   FaImage,
 } from "react-icons/fa";
 
+import io from "socket.io-client";
+const socket = io.connect("http://localhost:5000");
+
+const myChat_id = window.sessionStorage.getItem("agent");
+// const currentChat_id = window.sessionStorage.getItem("currentChat");
+socket.emit("active", myChat_id);
+
 const Chat = () => {
-  //hard coded messges
-  const myChat_id = window.sessionStorage.getItem("agent");
-  const currentChat_id = window.sessionStorage.getItem("currentChat");
   const [mychat, setMyChat] = useState({});
   const [chatMessages, setChatMessage] = useState([]);
+  const [emojiPicker, setEmojiPicker] = useState(false);
+  const [currentChat_id] = useState(
+    window.sessionStorage.getItem("currentChat")
+  );
+
+  socket.on("sendMessage", (objmsg) => {
+    setChatMessage([...chatMessages, objmsg]);
+  });
 
   useEffect(() => {
     //set my chat data
@@ -36,24 +52,10 @@ const Chat = () => {
       setMyChat(data);
     });
 
-    //every 5 seconds
-    setInterval(() => {
-      getAgent(currentChat_id).then((data) => {
-        setMyChat(data);
-      });
-    }, 5000);
-
     //initial call to load chats
     getMessageListForCurrentChat().then((data) => {
       setChatMessage(data);
     });
-
-    //interval call
-    setInterval(() => {
-      getMessageListForCurrentChat().then((data) => {
-        setChatMessage(data);
-      });
-    }, 5000);
   }, []);
   let [inputValue, setInputValue] = useState("");
 
@@ -118,12 +120,12 @@ const Chat = () => {
     ) {
       setChatMessage([...chatMessages, msgObj]);
       postMessage(msgObj);
+      socket.emit("sendMessage", msgObj);
     }
   }
 
   async function listenForFileSelection(e) {
     setEmojiPicker(false);
-    console.log(e.target.files);
     const files = e.target.files;
     for (let i = 0; i < files.length; i++) {
       displayChatImage(files[i]);
@@ -134,7 +136,6 @@ const Chat = () => {
     setEmojiPicker(false);
     setInputValue(e.target.value);
     //I want to update status functionality to typing
-    updateAgentOnlineStatus("typing...");
   }
 
   function getImageArr() {
@@ -147,7 +148,6 @@ const Chat = () => {
     return imgArr;
   }
 
-  const [emojiPicker, setEmojiPicker] = useState(false);
   const inputRef = useRef();
 
   function toggleEmoji(emoji) {
@@ -155,17 +155,28 @@ const Chat = () => {
     setInputValue(inputElement.value + emoji.emoji);
   }
 
-  function submitMessage() {
+  function submitMessage(e) {
+    e.preventDefault();
     setEmojiPicker(false);
     sendMessage(inputValue, getImageArr());
     imageRef.current.innerHTML = "";
     setInputValue("");
+
     //update status functionality back to online
     updateAgentOnlineStatus("online");
   }
 
+  function clearEmojiPicker(e) {
+    const emojiWrapper = document.querySelector("aside.emojiPicker");
+    const emojibox = emojiWrapper.querySelector(".epr_q53mwh");
+    console.log(emojibox);
+    if (!emojibox.contains(e.target)) {
+      setEmojiPicker(false);
+    }
+  }
+
   return (
-    <div className="single_chat">
+    <div onClick={clearEmojiPicker} className="single_chat">
       <header>
         <Link to="/pages/home2/chats">
           <FaArrowLeft size={20} />
@@ -188,12 +199,12 @@ const Chat = () => {
       ) : (
         " "
       )}
-      <article ref={imageRef}></article>
-      <footer className="chat_message">
+      <article class="article" ref={imageRef}></article>
+      <form onSubmit={submitMessage} className="chat_message">
         <div className="chat_emoji">
           <span className="iconEmoji">
             <FaSmile
-              onClick={() => setEmojiPicker(true)}
+              onClick={() => setEmojiPicker(!emojiPicker)}
               size={20}
               color="yellow"
             />
@@ -235,7 +246,7 @@ const Chat = () => {
             />{" "}
           </span>
         </div>
-      </footer>
+      </form>
     </div>
   );
 };

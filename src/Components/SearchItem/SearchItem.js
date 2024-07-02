@@ -21,15 +21,15 @@ const SearchItem = () => {
   const [skills, setSkills] = useState([]);
   const [achievements, setAchivements] = useState([]);
   const [goals, setGoals] = useState([]);
+  const [email] = useState(window.sessionStorage.getItem('currentSearch'))
 
   useEffect(() => {
-    let email = window.sessionStorage.getItem("currentSearch");
     getAgent(email).then((data) => {
       setAgent(data);
       setMyPost(data.PostsArray);
       setRecords(data.Profile);
       setSkills(data.Profile.skills);
-      setAchivements(data.Profile.archievements);
+      setAchivements(data.Profile.achievements);
       setGoals(data.Profile.goals);
     });
   }, []);

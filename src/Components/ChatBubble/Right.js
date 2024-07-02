@@ -1,10 +1,12 @@
 import "./ChatBubble.css";
+
+import { Link } from "react-router-dom";
 //icons
 import { FaCheckDouble } from "react-icons/fa";
 
 const Right = ({ time, check_type, text, imageArr }) => {
   const diplayImageArr = imageArr.map((image) => (
-    <img alt="source" src={image} />
+    <Link to="/pages/home2/chats/chat/graphics"> <img alt="source" src={image} /> </Link>
   ));
 
   return (

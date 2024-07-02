@@ -42,7 +42,7 @@
 
 main.chat_field {
   position: relative;
-  height: 400px;
+  height: 300px;
   padding: 2rem;
   width: 100%;
   overflow-y: scroll;
@@ -51,17 +51,30 @@ main.chat_field::-webkit-scrollbar {
   display: none;
 }
 
-article {
+.article {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow-y: scroll;
+  /* background-color: rgba(0, 0, 0, 0.9); */
   overflow-x: scroll;
   display: flex;
   margin-top: 0.5rem;
-  column-gap: 1rem;
+  column-gap: .5rem;
 }
-article::-webkit-scrollbar {
-  display: none;
+.article::-webkit-scrollbar {
+ height: 10px;
+}
+.article::-webkit-scrollbar-track
+{
+  border-radius: 1rem;
+}
+.article::-webkit-scrollbar-thumb 
+{
+ border-radius: 1rem;
+
+ background: var(--grey_primary);
+}
+.article::-webkit-scrollbar-thumb:hover 
+{
+  cursor: pointer;
 }
 
 span.iconEmoji {
@@ -80,13 +93,14 @@ aside.emojiPicker {
   left: 0;
   right: 0;
 }
-article img {
+.article img {
   width: 100px;
   height: 100px;
   object-fit: fill;
+  margin-bottom: 1rem;
 }
 
-footer.chat_message {
+form.chat_message {
   display: grid;
   align-items: center;
   align-content: center;
@@ -96,7 +110,7 @@ footer.chat_message {
   padding: 2rem;
 }
 
-footer.chat_message input {
+form.chat_message input {
   width: 100%;
   margin-top: -0.5rem;
   background: none;

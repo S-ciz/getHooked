@@ -39,7 +39,7 @@ export async function ValidateAgent(objCredential, alertMessage, alertElement) {
     alertMessage("Successfully signing in");
     setTimeout(() => {
       window.location.pathname = "/pages/home2/newsfeeds";
-      updateAgentOnlineStatus("online")
+      updateAgentOnlineStatus("online");
     }, 2000);
   } else {
     alertElement.className = "alert_fail";
@@ -73,21 +73,34 @@ export async function getAgents() {
   }
 }
 
-//update status functionality to online
+let headersList = {
+  "Content-Type": "application/json",
+};
 
+//update status functionality to online
 export async function updateAgentOnlineStatus(status) {
   let extendurl = BaseUrl + "/status";
   const email = window.sessionStorage.getItem("agent");
-  let headersList = {
-    "Content-Type": "application/json",
-  };
 
   let response = await fetch(extendurl, {
     method: "PATCH",
     body: JSON.stringify({ email, status }),
     headers: headersList,
   });
+ 
+  if(!response.ok)
+    {
+       alert('error updating agent online status')
+    }
 
-  let data = await response.text();
-  //console.log(data);
+}
+
+export async function updateAgentAttributes(email, { type, content }) {
+  let newUrl = BaseUrl + "/update/" + email;
+  let response = await fetch(newUrl, {
+    method: "PATCH",
+    body: JSON.stringify({ type, content }),
+    headers: headersList,
+  });
+  let result = await response.text();
 }

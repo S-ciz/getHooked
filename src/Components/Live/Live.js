@@ -4,7 +4,7 @@ import VidCard from "../VidCard/VidCard"
 //icons
 import {BiMovie} from "react-icons/bi"
 //demo video 
-import demoVid from "../../Resources/spar.mp4"
+import demoVid from "../../Resources/bag.mp4"
 import poster from "../../Resources/boxorigin.jpeg"
 const Live = () => {
   return (

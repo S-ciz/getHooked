@@ -106,21 +106,16 @@ form h2 {
   display: block;
 }
 
-
 /* Media */
 
 @media (max-width: 600px) {
-  .form_content form 
-  {
+  .form_content form {
     width: 90%;
   }
 }
 
-@media (max-width:1050px)
-{
- 
-  .signup .poster 
-  {
+@media (max-width: 1050px) {
+  .signup .poster {
     width: 0;
     display: none;
   }
@@ -133,16 +128,11 @@ form h2 {
     height: 100vh;
     object-fit: cover;
     left: 0;
-  
-   
   }
 
-  .signup .form_content  
-  {
+  .signup .form_content {
     position: absolute;
     left: 0;
     right: 0;
   }
-
-  
 }

@@ -8,6 +8,13 @@
   display: none;
 }
 
+.post_item .post_main
+{
+  width: 700px;
+  margin: auto;
+
+}
+
 .post_item header {
   padding: 1rem;
   margin-left: 3rem;

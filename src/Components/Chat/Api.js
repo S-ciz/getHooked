@@ -1,4 +1,4 @@
-import { getCurrentAgent, getAgents} from "../../Pages/SignIn/Api";
+import { getCurrentAgent } from "../../Pages/SignIn/Api";
 //utilities
 export function getCurrentTime() {
   const HOURS =
@@ -11,44 +11,37 @@ export function getCurrentTime() {
       : new Date().getMinutes();
   return HOURS + ":" + MINUTES;
 }
- 
 
 async function getAgentMessages() {
   let agent = await getCurrentAgent();
   return agent.Messages;
 }
 
-export async function getMessageListForCurrentChat() {
+export async function getMessageListForCurrentChat(
+  userTo = window.sessionStorage.getItem("currentChat")
+) {
   let Messages = await getAgentMessages();
-  
-  let userFrom = window.sessionStorage.getItem('agent');
-  let userTo = window.sessionStorage.getItem('currentChat')
+  let userFrom = window.sessionStorage.getItem("agent");
   let messageList = Messages.filter(
     (msg) =>
-      (userFrom === msg.from ||
-      userFrom === msg.to) &&
-      (userTo === msg.from ||
-      userTo === msg.to)
+      (userFrom === msg.from || userFrom === msg.to) &&
+      (userTo === msg.from || userTo === msg.to)
   );
   return messageList;
 }
 
-
-export async function postMessage(bodyContent)
-{  
+export async function postMessage(bodyContent) {
   let headersList = {
-  
-    "Content-Type": "application/json"
-   }
-   
-   let response = await fetch("http://localhost:5000/api/gethookedAgent/sendMessage", { 
-     method: "POST",
-     body: JSON.stringify(bodyContent),
-     headers: headersList
-   });
-   
-   let data = await response.text();
-   //console.log(data);
+    "Content-Type": "application/json",
+  };
 
-
+  let response = await fetch(
+    "http://localhost:5000/api/gethookedAgent/sendMessage",
+    {
+      method: "POST",
+      body: JSON.stringify(bodyContent),
+      headers: headersList,
+    }
+  );
 }
+

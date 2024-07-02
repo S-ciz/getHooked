@@ -1,13 +1,20 @@
 import "./NewsFeed.css";
 
 //icons
-import { FaComment, FaThumbsUp } from "react-icons/fa";
-
+import { FaComment } from "react-icons/fa";
+import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 //images
 import Visual from "../../Resources/cal.jpg";
 import Gym from "../../Resources/community.jpg";
+import { useState } from "react";
 
 const NewsFeed = ({ Post }) => {
+  const [like, setLike] = useState(true);
+
+  function LikePost() {
+    like ? setLike(false) : setLike(!like);
+  }
+
   return (
     <div className="newsfeed">
       <div className="news_card">
@@ -36,7 +43,13 @@ const NewsFeed = ({ Post }) => {
         </main>
         <aside className="feed_aside">
           <div>
-            <FaThumbsUp color="var(--blue)" size={18} />
+            <span onClick={LikePost}>
+              {like ? (
+                <AiOutlineLike color="var(--grey_tertiary)" size={20} />
+              ) : (
+                <AiFillLike color="var(--blue)" size = {20} />
+              )}
+            </span>
             <p>{Post.likes}</p>
           </div>
           <div>

@@ -1,23 +1,21 @@
-import "./SignUp.css"
-import Button from "../../Components/Button/Button"
-import { Link } from "react-router-dom"
+import "./SignUp.css";
+import Button from "../../Components/Button/Button";
+import { Link } from "react-router-dom";
 
 //images /logo
 
-import Googlelogo from "../../Resources/google.png"
-import Agent from "../../Resources/agent.jpg"
+import Googlelogo from "../../Resources/google.png";
+import Agent from "../../Resources/agent.jpg";
 
 const SignUp = () => {
   return (
+    <div className="signup">
+      <div className="poster">
+        <img alt="agent" src={Agent} />
+      </div>
 
-   <div className="signup"> 
-
-    <div className="poster"> 
-     <img alt="agent" src={Agent}/>
-    </div>
-
-    <div className="form_content"> 
-    <form>
+      <div className="form_content">
+        <form>
           <h2>Create your account</h2>
 
           <label> Email </label>
@@ -26,11 +24,9 @@ const SignUp = () => {
           <input placeholder="Enter password" />
           <Button bgC={"var(--blue)"} text={"Create account"} />
 
-          <div className="create"> 
+          <div className="create">
             <p>Already have an account?</p>
-            <Link to={"/pages/sign_in"}> 
-             Sign in
-            </Link>
+            <Link to={"/pages/sign_in"}>Sign in</Link>
           </div>
 
           <div className="options">
@@ -44,13 +40,9 @@ const SignUp = () => {
             Sign up with google
           </button>
         </form>
-
-
+      </div>
     </div>
+  );
+};
 
-
-   </div>
-  )
-}
-
-export default SignUp
+export default SignUp;

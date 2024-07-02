@@ -3,9 +3,9 @@ import "./Showcase.css";
 
 //images
 
-import box1 from "../../Resources/face.jpg";
+import box1 from "../../Resources/faces.jpg";
 import box2 from "../../Resources/spar2.jpg";
-import box3 from "../../Resources/shadowbox.jpg";
+import box3 from "../../Resources/lift.jpg";
 
 const Showcase = () => {
   return (
