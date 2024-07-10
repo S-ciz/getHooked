@@ -13,6 +13,9 @@ import ValuesIMg from "../../Resources/values.jpg";
 
 //utilities
 import { truncate } from "../../UX/Utility";
+import Modal from "../../Components/Modal/Modal";
+import ModalContext from "../../Components/ModalContext";
+import { useState } from "react";
 
 const Home = () => {
   const introcards = [
@@ -46,21 +49,27 @@ const Home = () => {
       key={card.id}
       heading={card.heading}
       description={truncate(card.description, maxNumberOfWords)}
+      full_descr={card.description}
       src={card.src}
     />
   ));
 
+  const [modalState, setModalState] = useState(false);
+  const [modalContent, setModalContent] = useState(<h1>Testing</h1>);
+
   return (
-    <>
+    <ModalContext.Provider
+      value={{ modalState, setModalState, modalContent, setModalContent }}
+    >
+      {modalState ? <Modal Content={modalContent} /> : ""}
       <Navbar />
       <Showcase />
       <Slider />
       <Welcome />
-
       <div className="intro_cards">{outputCards}</div>
       <Featuring />
       <Quote />
-    </>
+    </ModalContext.Provider>
   );
 };
 

@@ -56,14 +56,14 @@ const Featuring = () => {
     },
   ];
 
-  const maxNumberOfWords = 10
-
+  const maxNumberOfWords = 10;
   const displayFeature = featureArray.map((feature) => (
     <PrimaryCard
       key={feature.id}
       src={feature.src}
       heading={feature.heading}
       description={truncate(feature.description, maxNumberOfWords)}
+      full_descr={feature.description}
     />
   ));
 

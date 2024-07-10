@@ -1,5 +1,6 @@
 .details_editor {
-  background-color: white;
+  background-color: #002D62;
+ 
   width: 100%;
   margin: auto;
 }
@@ -15,7 +16,7 @@ section.de_inputs {
   padding: 1rem;
 }
 section.de_inputs h2 {
-  color: var(--grey_tertiary);
+  color: var(--grey_primary);
   margin-bottom: 1rem;
   border-left: 2px solid var(--blue);
   padding-left: 0.5rem;
@@ -35,7 +36,7 @@ section.de_inputs label {
   display: block;
   font-size: 12px;
   padding-top: 0.5rem;
-  color: var(--grey_tertiary);
+  color: var(--grey_primary);
   padding-bottom: 0.5rem;
 }
 section.de_inputs textarea {
@@ -123,7 +124,7 @@ section.de_image {
   padding: 0.5rem;
   border: none;
   border: 1px solid var(--grey_secondary);
-  background-color: var(--blue);
+  background:  #13274F;
   color: var(--white);
 }
 

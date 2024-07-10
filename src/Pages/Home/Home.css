@@ -17,10 +17,8 @@
 }
 
 @media (max-width: 900px) {
-
-    .intro_cards 
-    {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+  .intro_cards {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

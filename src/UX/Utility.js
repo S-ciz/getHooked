@@ -24,3 +24,29 @@ export function trim(txt) {
 
   return newList.join("");
 }
+
+export function getCurrentDate() {
+  let objDate = new Date();
+
+  const year = objDate.getFullYear();
+  const months = [
+    "Jan",
+    "Feb",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  const week = weekDays[objDate.getDay()];
+  const month = months[objDate.getMonth()];
+
+  return objDate.getDate() + " " + month + year + " , " + week;
+}

@@ -3,33 +3,25 @@ import "./Postform.css";
 
 //icons
 import { FaImage } from "react-icons/fa";
-import { postImage } from "./Api";
+import { postFeed } from "./Api";
 const Postform = () => {
   let [images, setImages] = useState([]);
+  let [description, setDescription] = useState("");
 
+  function clearPendingImages() {
+    let elementGraphics = graphics.current;
+    elementGraphics.innerHTML = "";
+  }
   function submitPost(e) {
     e.preventDefault();
-
-    for (let i = 0; i < images.length; i++) {
-      postImage(images[i]);
-    }
+    postFeed(images[0], description);
+    //clear fields
+    setImages([]);
+    clearPendingImages();
+    setDescription("");
   }
 
   let graphics = useRef();
-
-  function getImgFileLocation(file) {
-    let src = "";
-    let fileReader = new FileReader();
-    fileReader.readAsDataURL(file[0]);
-    fileReader.onload = (e) => {
-      src = e.target.result;
-      alert(src);
-      alert(e.target.result);
-    };
-
-    alert("src again " + src);
-    return src;
-  }
 
   function createIMageUrl(file) {
     return URL.createObjectURL(file);
@@ -58,7 +50,6 @@ const Postform = () => {
       <div ref={graphics} className="graphics">
         {" "}
       </div>
-
       <span className="file_select">
         <FaImage size="20" color="purple" />
         <input
@@ -74,6 +65,8 @@ const Postform = () => {
       <textarea
         placeholder="Description..."
         className="graphic_description"
+        value={description}
+        onInput={(e) => setDescription(e.target.value)}
       ></textarea>
 
       <button> Post </button>

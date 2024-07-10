@@ -68,7 +68,7 @@ aside p {
 }
 
 section aside button {
-  background-color: var(--blue);
+  background-color:#002244;;
   padding: 0.5rem;
   color: var(--grey_primary);
   border: none;
