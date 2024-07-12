@@ -135,7 +135,7 @@ import PostItem from "./Components/PostItem/PostItem";
 import ChatGraphics from "./Components/ChatGraphics/ChatGraphics";
 import ProfileEditor from "./Components/Editor/ProfileEditor/ProfileEditor";
 
-const BASE_PATH = "/your-repository";
+const BASE_PATH = "/getHooked";
 const withBasePath = (path) => `${BASE_PATH}${path}`;
 
 const Router = createBrowserRouter([
