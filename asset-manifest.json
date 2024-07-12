@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/getHooked/static/css/main.65e9df96.css",
+    "main.js": "/getHooked/static/js/main.79fc5174.js",
+    "static/js/787.d3befce1.chunk.js": "/getHooked/static/js/787.d3befce1.chunk.js",
+    "static/media/bag.mp4": "/getHooked/static/media/bag.a20116c1ca288f10afcd.mp4",
+    "static/media/lift.jpg": "/getHooked/static/media/lift.a8e9f550e94bfbf52421.jpg",
+    "static/media/profile_lg.jpg": "/getHooked/static/media/profile_lg.e779231ba594fca4ee6f.jpg",
+    "static/media/showcase.jpg": "/getHooked/static/media/showcase.fafd36ea17903b48d890.jpg",
+    "static/media/faces.jpg": "/getHooked/static/media/faces.e0ba5ee17ccfb5e3b52c.jpg",
+    "static/media/community.jpg": "/getHooked/static/media/community.b1e5e45722be91bbe900.jpg",
+    "static/media/dum.jpg": "/getHooked/static/media/dum.fd1003733a4528cdf7a9.jpg",
+    "static/media/filter.jpg": "/getHooked/static/media/filter.9d4db34b5009bcef4bc0.jpg",
+    "static/media/values.jpg": "/getHooked/static/media/values.70b60cf34e5c76c09b93.jpg",
+    "static/media/vision.png": "/getHooked/static/media/vision.f43b97ba9c9d14671cf4.png",
+    "static/media/gym.jpg": "/getHooked/static/media/gym.3b4b17186557474b9638.jpg",
+    "static/media/cal.jpg": "/getHooked/static/media/cal.5f4490a243e5381bde97.jpg",
+    "static/media/lights.jpg": "/getHooked/static/media/lights.0e561428fd477bce6a9c.jpg",
+    "static/media/boxorigin.jpeg": "/getHooked/static/media/boxorigin.e65424526ef3e6d08fed.jpeg",
+    "static/media/box.jpg": "/getHooked/static/media/box.395c704dc802d59997ea.jpg",
+    "static/media/face_off.jpg": "/getHooked/static/media/face_off.b3661b251425cf36a523.jpg",
+    "static/media/revicons.eot": "/getHooked/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/getHooked/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/google.png": "/getHooked/static/media/google.960c670a7a8d952eba35.png",
+    "static/media/revicons.woff": "/getHooked/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/getHooked/index.html",
+    "main.65e9df96.css.map": "/getHooked/static/css/main.65e9df96.css.map",
+    "main.79fc5174.js.map": "/getHooked/static/js/main.79fc5174.js.map",
+    "787.d3befce1.chunk.js.map": "/getHooked/static/js/787.d3befce1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.65e9df96.css",
+    "static/js/main.79fc5174.js"
+  ]
+}
