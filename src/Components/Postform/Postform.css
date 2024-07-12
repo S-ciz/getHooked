@@ -1,6 +1,6 @@
 .Postform {
   padding: 1rem;
-  border: 1px solid var(--grey_secondary);
+  border: 1px solid var(--grey_tertiary);
 }
 .graphics {
   display: flex;
@@ -11,28 +11,36 @@
   margin-bottom: 1rem;
 }
 .graphics::-webkit-scrollbar {
-   display:grid;
-   height: .5rem;
-  
+  display: grid;
+  height: 2px;
 }
 
-.graphics::-webkit-scrollbar-track 
-{
-  background: var(--grey_primary)
+.graphics::-webkit-scrollbar-track {
+  background: var(--grey_tertiary);
 }
 
-.graphics::-webkit-scrollbar-thumb 
-{
-  background: orangered;
+.graphics::-webkit-scrollbar-thumb {
+  background: var(--grey_secondary);
   border-radius: 1rem;
 }
-.graphics::-webkit-scrollbar-thumb:hover 
-{
+.graphics::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
 }
 
 
+.alert  
+{
+  color: white;
+  padding: 0.5rem;
+  margin: auto;
+  margin-top: 1rem;
+  font-size: 15px;
+}
 
+.postform_failure {
+  background-color: red;
+  
+}
 
 .graphics img {
   width: 100px;
@@ -40,54 +48,51 @@
   object-fit: cover;
   border: 1px solid var(--grey_secondary);
   cursor: pointer;
+  opacity: 0.9;
 }
 .graphic_description {
+  background: none;
   width: 400px;
   height: 200px;
   resize: none;
   margin-top: 1rem;
-  border: 1px solid var(--grey_secondary);
-  padding: 1rem; 
+  border: 1px solid var(--grey_tertiary);
+  padding: 1rem;
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--grey_primary);
 }
 .file_select {
   position: relative;
- margin-right: 1rem;
- display: grid;
- align-items: center;
-
+  margin-right: 1rem;
+  display: grid;
+  align-items: center;
 }
 
 .Postform input {
   position: absolute;
   opacity: 0;
-
-
 }
 .Postform input:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
 .Postform button {
   display: grid;
   width: 400px;
   padding: 0.5rem;
   text-align: center;
-  background-color: var(--blue);
-  border: none;
-  color: var(--white);
+  background: none;
+  border: 1px solid var(--grey_tertiary);
+  color: var(--grey_primary);
 }
 
 @media (max-width: 1200px) {
-  .graphics 
-  {
+  .graphics {
     width: 300px;
   }
-  .Postform button 
-  {
+  .Postform button {
     width: 100%;
   }
-  .graphic_description
-  {
+  .graphic_description {
     width: 100%;
   }
 }

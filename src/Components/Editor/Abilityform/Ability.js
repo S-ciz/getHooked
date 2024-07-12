@@ -53,7 +53,7 @@ const Ability = ({ title, ability }) => {
         </section>
         <section onClick={addItem} className="add_item">
           {" "}
-          <FaPlus color="var(--white)" />{" "}
+          <FaPlus color="var(--grey_secondary)" />{" "}
         </section>
       </footer>
     </div>

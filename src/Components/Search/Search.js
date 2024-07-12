@@ -7,9 +7,9 @@ const Search = ({ item }) => {
         <div className="img">
           <img loading="lazy" alt="prof" src={item.profileImage} />
         </div>
-        <div>
-          <h4>{item.name}  {item.surname} </h4>
-          <p>{item.aboutUser}</p>
+        <div className="Searching_user">
+          <h4 className="Searching_user_title">{item.name}  {item.surname} </h4>
+          <p className="Searching_user_text">{item.aboutUser}</p>
         </div>
       </aside>
       <aside>

@@ -7,7 +7,7 @@
 
 .profileEditor::-webkit-scrollbar 
 {
-  width: 10px
+  width: 5px
 }
 .profileEditor::-webkit-scrollbar-thumb 
 {

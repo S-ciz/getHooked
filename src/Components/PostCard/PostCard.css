@@ -1,14 +1,12 @@
 .postCard {
   width: 100%;
   margin: auto;
-  border: 1px solid var(--grey_secondary);
+  border: 1px solid var(--grey_tertiary);
   border-radius: 2rem;
-  background-color: var(--white);
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-left: 5px solid pink;
   margin-bottom: 0.5rem;
 }
 .postCard img {
@@ -29,6 +27,7 @@
 }
 .postCard_img .content h5 {
   font-size: 0.5rem;
+  color: var(--grey_secondary);
 }
 .postCard_img .content p {
   font-size: 0.5rem;
@@ -56,9 +55,7 @@
 
 .postCards_title {
   margin-left: 1rem;
-  color: var(--grey_tertiary);
-  border-left: 2px solid orangered;
-  padding-left: 0.5rem;
+  color: var(--grey_secondary);
   margin-bottom: 1.5rem;
 }
 
@@ -68,7 +65,8 @@
   width: 100%;
   margin: auto;
   margin-top: 0.3rem;
-  background-color: var(--white);
+  background-color: none;
+  border: 1px solid var(--grey_tertiary);
   padding: 1rem;
   margin-bottom: 1rem;
 }

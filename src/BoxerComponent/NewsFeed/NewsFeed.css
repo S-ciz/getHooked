@@ -1,3 +1,6 @@
+.newsfeed {
+  width: 100%;
+}
 .newsfeed .news_card header {
   display: flex;
   margin: auto;
@@ -11,9 +14,12 @@
   animation: newsfeed 1s ease-in-out;
   animation-fill-mode: forwards;
   width: 100%;
-  background-color: var(--white);
+  /* background-color: var(--white); */
+  border: 1px solid var(--grey_tertiary);
+  padding: 1rem;
   margin-bottom: 1rem;
   margin-top: 2rem;
+  color: var(--white);
 }
 @keyframes newsfeed {
   0% {
@@ -30,14 +36,38 @@
   align-items: center;
   gap: 1rem;
   font-weight: bold;
-  color: var(--grey_tertiary);
+  color: var(--grey_secondary);
+}
+.feed_visual {
+  position: relative;
+  display: grid;
+  margin: auto;
 }
 .feed_visual img {
-  background-color: var(--grey_primary);
-  object-fit: fill;
+  border: 1px solid var(--grey_tertiary);
   width: 100%;
+  object-fit: fill;
+  height: 300px;
   padding: 1rem;
-  height: 350px;
+}
+
+.feed_visual span.feed_chevrons {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+
+.chevronLeftRight {
+  cursor: pointer;
+  background-color: var(--grey_secondary);
+  border-radius: 1rem;
+  z-index: 3;
+
 }
 
 .feed_time {
@@ -46,17 +76,17 @@
 
 main.feed_content p {
   padding-top: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 2rem;
+  padding-bottom: 0.5rem;
+
   line-height: 1.6;
 }
 
 .feed_aside {
   display: flex;
+  color: white;
   align-items: center;
   align-content: center;
-  padding-left: 1.5rem;
-  padding-bottom: 0.8rem;
+  padding-top: 1rem;
   gap: 2rem;
 }
 
@@ -65,10 +95,10 @@ main.feed_content p {
   gap: 0.5rem;
   align-items: center;
 }
-.feed_aside span 
-{
+.feed_aside span {
   cursor: pointer;
 }
 .feed_aside div p {
   font-size: 12px;
+  color: var(--white);
 }

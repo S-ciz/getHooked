@@ -5,12 +5,12 @@ import "./PostCard.css"
 
 import {AiOutlineDelete, AiOutlineEdit} from 'react-icons/ai'
 import img1 from "../../Resources/agent.jpg"
-const PostCard = ({title}) => {
+const PostCard = ({title, src}) => {
   return (
     <div className='postCard'>
       
       <section className='postCard_img'> 
-        <div><img src={img1} alt='postcardimg'/> </div>
+        <div><img src={src[0]} alt='postcardimg'/> </div>
         <div className='content'> <h5>{title}</h5> <p>12:30 feb 2020</p> </div>
       </section>
       <section className='postCard_editors'>

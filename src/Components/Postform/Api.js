@@ -9,24 +9,29 @@ let headersList = {
 
    export async function postFeed(imgFile, description = '')
    {
-    
-    let imgObject = await postImage(imgFile);
-    let imgName = imgObject.filename
-   
-      let agent =  await getCurrentAgent();
      
-      console.log(agent)
+     let srcList = []
 
+     for(let img of imgFile)
+     {
+      let imgObject = await postImage(img);
+      let imgName = imgObject.filename;
+      const fullName = BASE_URL + "/Images/" + imgName
+      srcList.push(fullName);
+     }
+   
       let content = {
         id: '...',
         category: "video",
-        src: BASE_URL + "/Images/" + imgName,
+        src: srcList,
         timeStamp:  getCurrentDate(),
         text: description,
         likes: 0,
         comments: 0,
         commentsArr: []
       }
+
+      let agent =  await getCurrentAgent();
       let response = await updateAgentAttributes(agent.email, { type:"addPost", content: content })
       let data = await response().text();
       console.log(data);

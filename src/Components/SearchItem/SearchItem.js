@@ -57,7 +57,6 @@ const SearchItem = () => {
   const achievements_def = ["Golden Gloves", "championships"];
 
   const goals_def = ["Sneak jabs", "Fitness", "stamina", "Turn pro"];
-
   const displayPosts = myposts.map((post, key) => (
     <Post
       key={key}

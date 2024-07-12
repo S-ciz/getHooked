@@ -1,5 +1,5 @@
 .dropdown {
-  background-color: var(--grey_primary);
+  border: 1px solid var(--grey_secondary);
   width: 80%;
   margin: auto;
 }
@@ -30,15 +30,11 @@ aside.chevron {
 }
 
 .dropdown_children::-webkit-scrollbar {
-  width: 10px;
+  width: 2px;
 }
-.dropdown_children::-webkit-scrollbar-track {
-  background-color: var(--grey_secondary);
-  border-radius: 1rem;
-}
+
 .dropdown_children::-webkit-scrollbar-thumb {
-  background-color: var(--blue);
-  border-radius: 1rem;
+  background-color: var(--grey_secondary);
   cursor: pointer;
 }
 
@@ -48,7 +44,7 @@ aside.chevron {
     overflow: hidden;
   }
   100% {
-    height: 200px;
+    height: 100px;
     overflow-y: scroll;
   }
 }
@@ -60,11 +56,11 @@ aside.chevron {
   animation: closeList 0.5s ease-in-out;
   animation-fill-mode: forwards;
   transition: all 1s ease-in-out;
-  height: 200px;
+  height: 150px;
 }
 @keyframes closeList {
   0% {
-    height: 200px;
+    height: 100px;
   }
 
   100% {
@@ -79,10 +75,10 @@ aside.chevron {
 }
 
 .dropdown_children ul li {
-  border-bottom: 1px solid var(--grey_secondary);
-  padding: 1rem 0;
+  /* border-bottom: 1px solid var(--grey_secondary); */
+  padding: 0.5rem 0;
   font-weight: bold;
-  color: var(--grey_tertiary);
+  color: var(--grey_primary);
 }
 
 @media (max-width: 900px) {

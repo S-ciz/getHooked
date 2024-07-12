@@ -1,7 +1,8 @@
  input.input {
     padding: 0.5rem 1rem;
-    color: var(--grey_tertiary);
-    border: none;
+    color: var(--grey_primary);
+    border: 1px solid var(--grey_secondary);
+    background: none;
     border-radius: 1rem;
     width: 100%;
     height: 2.5rem;

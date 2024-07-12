@@ -48,5 +48,5 @@ export function getCurrentDate() {
   const week = weekDays[objDate.getDay()];
   const month = months[objDate.getMonth()];
 
-  return objDate.getDate() + " " + month + year + " , " + week;
+  return objDate.getDate() + " " + month + " "+ year + " , " + week;
 }

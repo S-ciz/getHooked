@@ -6,7 +6,7 @@ import AgentContext from "../AgentContext"
 import { useContext } from "react"
 const PostCards = () => {
 
-  const {agent, toggleAgent} = useContext(AgentContext);
+  const {agent} = useContext(AgentContext);
   return (
     <div className='postCards_wrapper'>
          
@@ -17,7 +17,7 @@ const PostCards = () => {
      <Postform />
      </section>
      <section className="pc_cards"> 
-      {agent ? agent.PostsArray.map((item, key)=> (<PostCard key={key} title={item.text} />)) : " "}
+      {agent ? agent.PostsArray.map((item, key)=> (<PostCard key={key} title={item.text} src={item.src} />)) : " "}
      </section>
    
 

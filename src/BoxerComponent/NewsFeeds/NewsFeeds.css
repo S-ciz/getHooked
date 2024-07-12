@@ -11,7 +11,16 @@
 .newsfeeds 
 {
     margin: auto;
-    width: 700px;
+    width: 500px;
+}
+
+@media (max-width:800px) {
+
+  .newsfeeds 
+  {
+    width: 90%;
+  }
+  
 }
 
 

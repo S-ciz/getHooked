@@ -7,6 +7,7 @@ import { postFeed } from "./Api";
 const Postform = () => {
   let [images, setImages] = useState([]);
   let [description, setDescription] = useState("");
+  let [Popup, setPopup] = useState('')
 
   function clearPendingImages() {
     let elementGraphics = graphics.current;
@@ -14,11 +15,23 @@ const Postform = () => {
   }
   function submitPost(e) {
     e.preventDefault();
-    postFeed(images[0], description);
-    //clear fields
-    setImages([]);
-    clearPendingImages();
-    setDescription("");
+
+    if(images.length > 0)
+    {
+      postFeed(images, description);
+      //clear fields
+      setImages([]);
+      clearPendingImages();
+      setDescription("");
+      setPopup("Successfully Posted, reload page...")
+    }
+    else 
+    {
+      setPopup("Please select an image")
+    }
+
+   
+    
   }
 
   let graphics = useRef();
@@ -51,7 +64,7 @@ const Postform = () => {
         {" "}
       </div>
       <span className="file_select">
-        <FaImage size="20" color="purple" />
+       <FaImage size="20" color="var(--grey_secondary)" />
         <input
           multiple={true}
           onChange={listenForFileSelection}
@@ -61,6 +74,8 @@ const Postform = () => {
           required
         />
       </span>
+
+     <div className="alert"> { Popup.length > 0 ? Popup : '' }</div>
 
       <textarea
         placeholder="Description..."

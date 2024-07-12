@@ -8,6 +8,7 @@ import { FaHeart, FaComment, FaImage, FaVideo } from "react-icons/fa";
 //class
 const Post = ({ category, src, likes, comments, commentsArr, text, timeStamp }) => {
 
+  console.log(src)
   function storePostToSession()
   {   
      let setDataToObject = { category, src, likes, comments, commentsArr, text, timeStamp }
@@ -33,7 +34,7 @@ const Post = ({ category, src, likes, comments, commentsArr, text, timeStamp }) 
        
       </div>
       <div className="post_graphic">
-        <img src={src} alt="post_graphic" />
+        <img src={src[0]} alt="post_graphic" />
       </div>
     </div>
     </Link>
@@ -42,7 +43,7 @@ const Post = ({ category, src, likes, comments, commentsArr, text, timeStamp }) 
 
 Post.defaultProps = {
   category: "image",
-  src: demoIMG,
+  src: [demoIMG],
   likes: 223,
   text: "this is a default text about the post",
   comments: 12,

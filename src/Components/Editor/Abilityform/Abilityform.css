@@ -6,9 +6,10 @@
   align-content: start;
   row-gap: 0.5rem;
   column-gap: 0.5rem;
-  background-color: var(--white);
+  background-color: none;
+  border: 1px solid var(--grey_tertiary);
   /* border: 1px solid var(--grey_secondary); */
-  border-radius: 1rem 1rem 0 0;
+  /* border-radius: 1rem 1rem 0 0; */
   overflow-y: scroll;
   overflow-x: scroll;
   width: 100%;
@@ -29,11 +30,8 @@
   background-color: var(--white);
 }
 .ability_title {
-  padding-left: 0.5rem;
-  border-left: 2px solid var(--blue);
-  margin-left: 1rem;
   margin-bottom: 0.5rem;
-  color: var(--grey_primary);
+  color: var(--grey_secondary);
 }
 .ability_main .item {
   display: flex;
@@ -41,9 +39,9 @@
   column-gap: 0.2rem;
 }
 .ability_main .item span {
-  background-color: var(--white);
-  border: 1px solid var(--grey_secondary);
-  color: grey;
+  background-color: none;
+  border: 1px solid var(--grey_tertiary);
+  color: var(--grey_secondary);
   padding: 0.3rem 1rem;
   border-radius: 1rem;
   text-align: center;
@@ -60,19 +58,21 @@
 }
 .ability_footer {
   width: 100%;
-  background-color: white;
-  border: 1px solid var(--grey_secondary);
+  background-color: none;
+  border: 1px solid var(--grey_tertiary);
   display: grid;
   align-items: center;
   column-gap: 1rem;
   padding: 0.5rem 0;
-  border-radius: 0 0 1rem 1rem;
+  /* border-radius: 0 0 1rem 1rem; */
   grid-template-columns: 4fr 1fr;
 }
 
 .ability_footer input {
   width: 100%;
-  border: 1px solid var(--grey_secondary);
+  border: 1px solid var(--grey_tertiary);
+  background: none;
+  color: var(--grey_primary);
   padding-left: 1rem;
   display: grid;
   height: 2rem;
@@ -81,7 +81,8 @@
 }
 
 .ability_footer .add_item {
-  background-color: #002244;
+  background-color: none;
+  border: 1px solid var(--grey_tertiary);
   width: 40px;
   text-align: center;
   padding: 0.5rem;
@@ -93,7 +94,8 @@
 .abilityform {
   width: 100%;
   overflow: hidden;
-  background-color: #002244;
+  background-color: none;
+  border: 1px solid var(--grey_tertiary);
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: start;

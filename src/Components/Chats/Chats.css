@@ -50,16 +50,17 @@ main.my_chats {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--white);
+  background-color: none;
   margin-left: 2rem;
   margin-right: 2rem;
   cursor: pointer;
-  border-bottom: 1px solid var(--grey_secondary);
+  border: 1px solid var(--grey_tertiary);
+  margin-bottom: .5rem;
   transition: all 0.2s ease-in-out;
 }
 
 .chats_chat:hover {
-  border-left: 0.5rem solid var(--blue);
+  border-left: 0.5rem solid var(--grey_secondary);
 }
 @keyframes chat {
   0% {
@@ -87,11 +88,11 @@ main.my_chats {
 }
 
 .chat_content h3 {
-  color: var(--grey_tertiary);
+  color: var(--grey_primary);
   font-size: 1rem;
 }
 .chat_content p {
-  color: var(--grey_tertiary);
+  color: var(--grey_secondary);
   font-size: 0.8rem;
   padding-top: 0.2rem;
 }

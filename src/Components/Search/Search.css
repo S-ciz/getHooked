@@ -38,13 +38,28 @@ aside h4 {
 aside p {
   color: black;
 }
+.search_content section {
+  background: none;
+  border: 1px solid var(--grey_tertiary);
+  margin-bottom: 0.5rem;
+}
+
 .search_content section:hover {
-  background-color: #efeaea;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.Searching_user_title {
+  color: var(--grey_secondary);
+}
+
+.Searching_user_text {
+  color: var(--grey_secondary);
 }
 
 .search_content section .img {
   width: 50px;
   height: 50px;
+  border: none;
   border-radius: 100%;
   background-color: var(--grey_secondary);
 }
@@ -68,8 +83,8 @@ aside p {
 }
 
 section aside button {
-  background-color:#002244;;
+  background-color: rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
-  color: var(--grey_primary);
-  border: none;
+  color: var(--grey_secondary);
+  border: 1px solid var(--grey_tertiary);
 }

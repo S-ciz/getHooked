@@ -1,8 +1,8 @@
 .details_editor {
-  background-color: #002D62;
- 
+  
   width: 100%;
   margin: auto;
+  border: 1px solid var(--grey_tertiary);
 }
 
 .details_editor main.de_main {
@@ -16,10 +16,8 @@ section.de_inputs {
   padding: 1rem;
 }
 section.de_inputs h2 {
-  color: var(--grey_primary);
+  color: var(--grey_secondary);
   margin-bottom: 1rem;
-  border-left: 2px solid var(--blue);
-  padding-left: 0.5rem;
   width: 100%;
   display: flex;
   column-gap: 2rem;
@@ -36,7 +34,7 @@ section.de_inputs label {
   display: block;
   font-size: 12px;
   padding-top: 0.5rem;
-  color: var(--grey_primary);
+  color: var(--grey_secondary);
   padding-bottom: 0.5rem;
 }
 section.de_inputs textarea {
@@ -45,9 +43,10 @@ section.de_inputs textarea {
   display: grid;
   height: 2.5rem;
   padding: 0.5rem;
-  color: black;
-  border: 1px solid var(--grey_secondary);
+  color: var(--grey_primary);
+  border: 1px solid var(--grey_tertiary);
   overflow: hidden;
+  background: none;
 }
 
 /* section.de_image {
@@ -60,6 +59,7 @@ section.de_image img {
   object-fit: cover;
   cursor: pointer;
   transition: all 0.6s ease-in;
+  border: 2px solid var(--grey_tertiary);
 }
 section.de_image img:hover {
   opacity: 0.5;
@@ -115,17 +115,17 @@ section.de_image {
 
 .details_editor footer {
   width: 60%;
-
   margin: auto;
+  margin-top: -1rem;
   padding: 1rem;
 }
 .details_editor footer > button {
   width: 100%;
   padding: 0.5rem;
   border: none;
-  border: 1px solid var(--grey_secondary);
-  background:  #13274F;
-  color: var(--white);
+  background:  none;
+  border: 1px solid var(--grey_tertiary);
+  color: var(--grey_secondary);
 }
 
 @media (max-width: 700px) {
