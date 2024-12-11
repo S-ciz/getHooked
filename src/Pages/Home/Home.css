@@ -6,19 +6,20 @@
   gap: 1rem;
   padding: 3rem 0;
   background-color: var(--grey_primary);
+
 }
 
 /* Media */
-@media (max-width: 900px) {
-  .intro_cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .intro_cards {
     display: grid;
     grid-template-columns: 1fr;
+    width: 100vw;
+    padding: 1rem;
   }
+
+
+
 }
+
+

@@ -1,11 +1,12 @@
 .sign_in {
   position: relative;
-  width: 100%;
   background-image: url("../../Resources/face_off.jpg");
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 100vh;
   overflow-y: scroll;
+ 
 }
 .sign_in::-webkit-scrollbar {
   display: none;
@@ -29,6 +30,7 @@
   margin-bottom: 1rem;
 }
 
+
 .sign_in .form {
   position: absolute;
   padding: 1rem;
@@ -37,8 +39,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  display: grid;
+  display: grid; 
   margin: auto;
+
 }
 
 .sign_in .form form h2 {

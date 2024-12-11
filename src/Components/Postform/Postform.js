@@ -2,89 +2,92 @@ import { useRef, useState } from "react";
 import "./Postform.css";
 
 //icons
-import { FaImage } from "react-icons/fa";
+import { FaLink } from "react-icons/fa";
+
+import PostCard from "../PostCard/PostCard";
+
+//comps
 import { postFeed } from "./Api";
+import { Link } from "react-router-dom";
 const Postform = () => {
-  let [images, setImages] = useState([]);
   let [description, setDescription] = useState("");
-  let [Popup, setPopup] = useState('')
-
-  function clearPendingImages() {
-    let elementGraphics = graphics.current;
-    elementGraphics.innerHTML = "";
-  }
-  function submitPost(e) {
-    e.preventDefault();
-
-    if(images.length > 0)
-    {
-      postFeed(images, description);
-      //clear fields
-      setImages([]);
-      clearPendingImages();
-      setDescription("");
-      setPopup("Successfully Posted, reload page...")
-    }
-    else 
-    {
-      setPopup("Please select an image")
-    }
-
-   
-    
-  }
+  let [imgUrl, setUrl] = useState("");
+  let [images, setImg] = useState([]);
+  let [Popup, setPopup] = useState("");
 
   let graphics = useRef();
 
-  function createIMageUrl(file) {
-    return URL.createObjectURL(file);
-  }
-  function displayPendingImages(file) {
-    let elementGraphics = graphics.current;
-    let newImage = document.createElement("img");
-    newImage.className = "pending_img";
-    newImage.src = createIMageUrl(file);
-    elementGraphics.append(newImage);
-  }
+  function submitPost(e) {
+    if (images.length > 0 && description.length > 0) {
+      postFeed(images, description);
+      alert("Successfully posted");
 
-  function storePendingImages(imgFile) {
-    setImages((images = [...images, imgFile]));
-  }
-
-  function listenForFileSelection(e) {
-    let files = e.target.files;
-    for (let i = 0; i < files.length; i++) {
-      storePendingImages(files[i]);
-      displayPendingImages(files[i]);
+      setImg([]);
+      setDescription("");
+    } else {
+      alert("Please enter description  and add image");
     }
   }
+
+  function toggleImage(e) {
+    setUrl(e.target.value);
+  }
+
+  function addImage() {
+    if (imgUrl.length > 0) {
+      setImg([...images, imgUrl]);
+    }
+
+    setUrl("");
+  }
+
+  const displayPendingimages = images.map((url) => (
+    <PostCard
+      removeCard={() => {
+        setImg(images.filter((img) => img != url));
+      }}
+      key={url}
+      src={[url]}
+    />
+  ));
+
   return (
-    <form onSubmit={submitPost} className="Postform">
-      <div ref={graphics} className="graphics">
-        {" "}
-      </div>
-      <span className="file_select">
-       <FaImage size="20" color="var(--grey_secondary)" />
-        <input
-          multiple={true}
-          onChange={listenForFileSelection}
-          type="file"
-          name="image"
-          accept="image/*"
-          required
-        />
-      </span>
+    <form onSubmit={(e) => e.preventDefault()} className="Postform">
+      <section>
+        <span className="imgUrl">
+          <input
+            value={imgUrl}
+            onInput={toggleImage}
+            placeholder="Enter image url "
+          />
+          <aside>
+            <a
+              href="https://www.pexels.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLink color="var(--grey_primary)" />
+            </a>
+          </aside>
+        </span>
+        <button onClick={addImage} className="addImage">
+          + Add image
+        </button>
+        <footer className="pendingImg">
+          {images.length > 0 ? displayPendingimages : " "}
+        </footer>
+      </section>
 
-     <div className="alert"> { Popup.length > 0 ? Popup : '' }</div>
+      <section>
+        <textarea
+          placeholder="Description..."
+          className="graphic_description"
+          value={description}
+          onInput={(e) => setDescription(e.target.value)}
+        ></textarea>
 
-      <textarea
-        placeholder="Description..."
-        className="graphic_description"
-        value={description}
-        onInput={(e) => setDescription(e.target.value)}
-      ></textarea>
-
-      <button> Post </button>
+        <button onClick={submitPost}> Post </button>
+      </section>
     </form>
   );
 };

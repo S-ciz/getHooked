@@ -28,20 +28,6 @@
 }
 
 
-.alert  
-{
-  color: white;
-  padding: 0.5rem;
-  margin: auto;
-  margin-top: 1rem;
-  font-size: 15px;
-}
-
-.postform_failure {
-  background-color: red;
-  
-}
-
 .graphics img {
   width: 100px;
   height: auto;
@@ -51,15 +37,18 @@
   opacity: 0.9;
 }
 .graphic_description {
-  background: none;
-  width: 400px;
+  background: var(--grey_secondary);
+  width: 100%;
   height: 200px;
   resize: none;
-  margin-top: 1rem;
+
   border: 1px solid var(--grey_tertiary);
   padding: 1rem;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--grey_primary);
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: .5rem;
 }
 .file_select {
   position: relative;
@@ -68,21 +57,72 @@
   align-items: center;
 }
 
-.Postform input {
-  position: absolute;
-  opacity: 0;
-}
+
 .Postform input:hover {
   cursor: pointer;
 }
 .Postform button {
   display: grid;
-  width: 400px;
+  width: 100%;
   padding: 0.5rem;
   text-align: center;
   background: none;
   border: 1px solid var(--grey_tertiary);
   color: var(--grey_primary);
+}
+
+span.imgUrl 
+{
+  position: relative;
+}
+
+span.imgUrl input{
+  width: 100%;
+  font-size: 1rem;
+  padding: .5rem;
+  background: none;
+  border: none;
+  border: 1px solid var(--grey_tertiary);
+  color: var(--grey_primary);
+}
+
+span.imgUrl aside 
+{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  display: grid;
+  margin: auto;
+  font-size: 1.2rem;
+
+}
+
+.addImage 
+{
+  margin: 1rem 0;
+}
+
+.pendingImg 
+{
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.pendingImg::-webkit-scrollbar 
+{
+  width: .3rem;
+
+}
+.pendingImg::-webkit-scrollbar-track 
+{
+  background-color: none;
+}
+.pendingImg::-webkit-scrollbar-thumb 
+{
+  background-color: var(--grey_primary);
+  border-radius: 1rem;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {

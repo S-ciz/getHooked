@@ -10,6 +10,7 @@ const Searches = () => {
 
   useEffect(() => {
     getAgents().then((data) => {
+      data = Object.values(data);
       const currentAgent = window.sessionStorage.getItem("agent");
       setAgents(data.filter((agent) => agent.email !== currentAgent));
     });

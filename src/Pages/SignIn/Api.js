@@ -1,33 +1,5 @@
-// //either boxer or coach
-// export function getCategorizedAgent(agent) {
-//   let objAgent = null;
-//   const { email, password, category, name, surname, nickname, profileImage } =
-//     agent;
-//   switch (category) {
-//     case "boxer":
-//       objAgent = new BoxerAgent(
-//         email,
-//         name,
-//         surname,
-//         nickname,
-//         profileImage
-//       );
-//       objAgent.setPassword(password);
-//       // console.log(objAgent)
-//       return objAgent;
-//     case "coach":
-//       objAgent = new CoachAgent(
-//         email,
-//         name,
-//         surname,
-//         nickname,
-//         profileImage
-//       );
-//       objAgent.setPassword(password);
-//       return objAgent;
-//   }
-// }
-export const BaseUrl = "http://localhost:5000/api/gethookedAgents";
+
+export const BaseUrl = "http://localhost:5000";
 //check if agent exists and call UI MESSAGE
 export async function ValidateAgent(objCredential, alertMessage, alertElement) {
   let extendedUrl = `${BaseUrl}/${objCredential.email}`;

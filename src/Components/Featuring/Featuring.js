@@ -35,7 +35,7 @@ const Featuring = () => {
     },
     {
       id: 4,
-      heading: "Training Resources + Tips",
+      heading: "Training Resources",
       description:
         "Offers a vast repository of training guides, techniques, and tips provided by renowned boxing experts, fostering continuous skill development.",
       src: dumbells,

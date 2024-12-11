@@ -14,10 +14,7 @@ let headersList = {
 
      for(let img of imgFile)
      {
-      let imgObject = await postImage(img);
-      let imgName = imgObject.filename;
-      const fullName = BASE_URL + "/Images/" + imgName
-      srcList.push(fullName);
+      srcList.push(img);
      }
    
       let content = {

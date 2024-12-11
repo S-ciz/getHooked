@@ -44,7 +44,7 @@ main.welcome .welcome_text h2
     main.welcome .welcome_image 
     {
       width: 100%;
-      padding: 0 2rem;
+      padding: 0 1rem;
     }
     main.welcome 
     {
@@ -55,7 +55,7 @@ main.welcome .welcome_text h2
     main.welcome .welcome_text  
     {
         width: 100%;
-        padding: 0 2rem;
+        padding: 0 1rem;
         margin-top: 2rem;
     }
 }

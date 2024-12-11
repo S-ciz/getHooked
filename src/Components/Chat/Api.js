@@ -36,7 +36,7 @@ export async function postMessage(bodyContent) {
   };
 
   let response = await fetch(
-    "http://localhost:5000/api/gethookedAgent/sendMessage",
+    "http://localhost:5000/sendMessage",
     {
       method: "POST",
       body: JSON.stringify(bodyContent),

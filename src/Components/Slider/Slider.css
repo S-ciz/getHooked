@@ -25,3 +25,10 @@
     text-align: center;
     
 }
+
+@media (max-width:600px) {
+    .slider  
+    {
+        width: 95vw;
+    }
+}
