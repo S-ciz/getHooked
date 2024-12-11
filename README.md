@@ -1,5 +1,9 @@
 # Getting Started
   npm start
+# Get into server
+  cd getHookedServer
+  npm run dev
+  
 # About us 
 
 GetHooked is a cutting-edge online platform passionately dedicated to
